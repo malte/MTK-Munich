@@ -1,0 +1,22 @@
+---
+import "../styles/base.css";
+import siteConfig from "../data/site-config";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main></main>
+
+  <style>
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    [role="doc-subtitle"] {
+      font-size: 1.5rem;
+    }
+  </style>
+</Layout>

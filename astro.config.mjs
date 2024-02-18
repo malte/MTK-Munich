@@ -4,6 +4,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+//  outDir: './MTK-Munich-dist',
+//  output: 'static',
   integrations: [
     tailwind({
       nesting:true,

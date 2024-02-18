@@ -3,12 +3,48 @@
 @tailwind utilities;
 
 @layer base {
-    h1, h2, h3, h4 {
-       @apply font-sans text-2xl;
+    @font-face {
+        font-family: DM Sans;
+        src: url(/fonts/DMSans-VariableFont_opsz,wght.ttf) format("ttf");
+    }
+
+    @font-face {
+        font-family: DM Sans;
+        font-style: italic;
+        src: url(/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf) format("ttf");
+    }
+    :root {
+        --accent: 136, 58, 234;
+        --accent-light: 224, 204, 250;
+        --accent-dark: 49, 10, 101;
+        --accent-gradient: linear-gradient(45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%);
+    }
+    h1, .jumbo {
+        @apply font-sans text-[4rem];
+        line-height: 4rem;
+    }
+    h2, h3, h4 {
+       @apply font-sans text-3xl mt-4;
+    }
+    h5 {
+        @apply font-[900] uppercase text-sm tracking-wide mt-2;
+    }
+    .text-gradient {
+        background-image: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        background-position: 0%;
+    }
+    p {
+        @apply max-w-[60ch];
     }
 }
 @layer components {
     .link-card {
-        @apply border border-slate-600 hover:border-slate-300 px-8 py-4 m-4 hover:bg-slate-900;
+        @apply border border-blue-600 hover:border-red-500 px-8 py-4 m-4 hover:bg-slate-900;
     }
 }
