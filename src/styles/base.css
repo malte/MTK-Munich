@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1, h2, h3, h4 {
+       @apply font-sans text-2xl;
+    }
+}
+@layer components {
+    .link-card {
+        @apply border border-slate-600 hover:border-slate-300 px-8 py-4 m-4 hover:bg-slate-900;
+    }
+}
