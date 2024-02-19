@@ -3,13 +3,15 @@ layout: "../layouts/Layout.astro"
 title: "Curriculum"
 ---
 
-# Curriculum
+---
 
 ##### Standing Practice
 
 - Ma Bu
 - Ting Bu
 - Gung Bu
+
+---
 
 ##### Set of six tsaos (Exercise)
 
@@ -18,17 +20,24 @@ They combine a relaxed body with coordinated movements.
 
 > if one part is still, all parts are still and if one part moves, all the part move
 
+---
+
 ##### Forms
 
 - Short Form
 - Long Form
 - Fast Form
+
+--
+
 - Partner Form
-- Short Form
+- Sword Form
 - Saber Form
 - Spear Form
 
-##### Partner Practice
+---
+
+##### Partner patterns for stepping and spatial awareness
 
 - Kilometros
 - Rombo
@@ -36,9 +45,13 @@ They combine a relaxed body with coordinated movements.
 - Saopapu
 - Strudeli
 
+---
+
 ##### Daoist Breathing
 
 reverse Breathing
+
+---
 
 ##### I Ching Kung Set
 

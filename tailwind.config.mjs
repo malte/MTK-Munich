@@ -8,10 +8,17 @@ export default {
 			'mono': ['ui-monospace', 'SFMono-Regular', ],
 			'display': ['Oswald', ],
 		},
+		fontSize: {
+			'sm': ['0.8rem', '1rem'],
+			'base': ['1rem', '1.25rem'],
+			'lg': ['1.25rem', '1.5rem'],
+			'xl': ['1.563rem', '1.75rem'],
+			'2xl': ['1.935rem', '2rem'],
+			'3xl': ['2.441rem', '3rem'],
+			'4xl': ['3.052rem', '3.5rem'],
+			'5xl': ['3.815rem', '4rem'],
+		},
 		extend: {
-			// fontFamily: {
-			// 	sans: ['"DM Sans"',sans-serif],
-			// },
 		}
 	},
 	plugins: [],

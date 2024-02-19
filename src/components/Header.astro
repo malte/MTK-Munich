@@ -3,7 +3,7 @@ import siteConfig from "../data/site-config";
 import Nav from "../components/Nav.astro";
 ---
 
-<header class="w-full my-12 sm:mb-16">
+<header class="w-full mt-[3.2rem] sm:mb-[5.45rem]">
   {
     siteConfig.logo && siteConfig.logo?.src ? (
       <a href="/">
@@ -14,14 +14,14 @@ import Nav from "../components/Nav.astro";
         />
       </a>
     ) : (
-      <a class="text-gradient text-[4rem] leading-none" href="/">
+      <a class="text-gradient text-5xl leading-none" href="/">
         {siteConfig.title}
       </a>
     )
   }
   {
     siteConfig.subtitle && (
-      <p class="text-2xl leading-tight">{siteConfig.subtitle}</p>
+      <p class="text-2xl mt-2 leading-tight">{siteConfig.subtitle}</p>
     )
   }
 </header>

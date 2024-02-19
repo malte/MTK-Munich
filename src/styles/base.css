@@ -22,13 +22,6 @@
                 rgb(var(--accent-light)) 30%,
                 white 60%);
     }
-    h1, .jumbo {
-        @apply font-sans text-[4rem];
-        line-height: 4rem;
-    }
-    h2, h3, h4 {
-       @apply font-sans text-3xl mt-4;
-    }
     h5 {
         @apply font-[900] uppercase text-sm tracking-wide mt-2;
     }
@@ -44,7 +37,5 @@
     }
 }
 @layer components {
-    .link-card {
-        @apply border border-blue-600 hover:border-red-500 px-8 py-4 m-4 hover:bg-slate-900;
-    }
+
 }

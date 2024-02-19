@@ -1,0 +1,51 @@
+---
+import "../styles/base.css";
+import siteConfig from "../data/site-config";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="MTK TaiChi Muc">
+  <main>
+    <div class="cards-array w-full flex flex-row gap-4">
+      <div class="card">
+        <h2>Why tai chi (chuan)?</h2>
+        <p>
+          Its the best, just try it, you will love it for sure.Its the best,
+          just try it, you will love it for sure.Its the best, just try it, you
+          will love it for sure.Its the best, just try it, you will love it for
+          sure.
+        </p>
+      </div>
+      <div class="card">
+        <h2>For whom is it?</h2>
+        <p>Its for you</p>
+        <p>Its for everybody from 9 to 99</p>
+      </div>
+      <div class="card">
+        <h2>When can i start ?</h2>
+        <p class="text-xl">Next week!</p>
+        <p>for everybody from 9 to 99</p>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .card {
+      @apply h-[9rem] shrink w-full;
+
+      h2 {
+        @apply text-3xl border-b border-t mb-6 w-full;
+      }
+    }
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+    [role="doc-subtitle"] {
+      font-size: 1.5rem;
+    }
+  </style>
+</Layout>
