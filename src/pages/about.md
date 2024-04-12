@@ -20,10 +20,10 @@ He is the lineage Holder of the Ma Tsun Kuen Style. With the years, listening to
 
 ## Ma Tsun Kuen
 
-a chinese general, who learned tai chi chuan from a captured taoist monk, later had to escape the communists during the cultural revolution to argentina, where Fernando became his student and later after his successor. Ma Tsun Kuen also was said to be friends with
+a chinese general, who learned tai chi chuan from a captured taoist monk, and later had to escape the communists during the cultural revolution. He exiled to argentina, where Fernando became his student and later his successor. Ma Tsun Kuen also was said to be friends with
 
 ## Zheng Manqing
 
-, who famously said:
+, who brought Tai Chi Chuan to the West in '64 , when he moved from Taiwan to New York. Amongst other things, he famously said:
 
 > Invest in loss

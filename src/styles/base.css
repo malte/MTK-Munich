@@ -22,6 +22,10 @@
                 rgb(var(--accent-light)) 30%,
                 white 60%);
     }
+    h1 {@apply text-3xl;}
+    h2 {@apply text-3xl;}
+    h3 {@apply text-2xl;}
+    h4 {@apply text-xl;}
     h5 {
         @apply font-[900] uppercase text-sm tracking-wide mt-2;
     }
