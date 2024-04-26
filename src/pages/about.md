@@ -3,27 +3,20 @@ layout: "../layouts/Layout.astro"
 title: "About"
 ---
 
-## About me
-
-I used to teach tcc (tai chi chuan) in Berlin for a few years. Now, that i live in Munich, i want to share my art.
-Not only because i enjoy teaching the things that i have learned, but also because this style or even something similar (as far as i know) is not taught elsewhere in munich; and i firmly believe in its immense value.
-
-My tcc journey started in 2012, not having any idea about what tai chi might be. I was just looking for a soft movement to help healing a shoulder injury. The closest school to my home in Berlin Neukölln was lead by …
-
 ## Alex Tschöpe
 
-who – for the first years – was my only teacher. The shoulder problems were quickly resolved and forgotten. But now i was intrugued by this weird sport? meditation? martial art? After a while i started to join the seminars, where i got introduced to his teacher,
+My Tai Chi Journey started 2012 in Berlin Neukölln in Alex school.
+He soon encoured me (and the other students) to join the seminars with his teacher, Fernando Chedel, so we could experience first hand ,what tai chi was really all about. After earning some grades, i also started teaching begginner classes.
 
 ## Fernando Chedel
 
-He is the lineage Holder of the Ma Tsun Kuen Style. With the years, listening to and experiencing the teachings from Fernando, it dawned on me that this practice is far more than just physical exercise, it's a "philosophy that can only be understood through the body", quoted from
+Fernando is the lineage holder of Ma Tsun Kuen Tai Chi Chuan and teaches students mostly in europe and south america.
+The teachings from Fernando revealed soon, that this practice is even more than this _magic_ art, it's a "philosophy that can only be understood through the body", which is quoted from
 
 ## Ma Tsun Kuen
 
-a chinese general, who learned tai chi chuan from a captured taoist monk, and later had to escape the communists during the cultural revolution. He exiled to argentina, where Fernando became his student and later his successor. Ma Tsun Kuen also was said to be friends with
+a former chinese general and Fernandos teacher, who learned tai chi chuan from a captured taoist monk, and later had to escape the communists during the cultural revolution. He exiled to argentina, where Fernando became his student and later his successor. Ma Tsun Kuen also was said to be friends with the famous
 
-## Zheng Manqing
+<h2> <a href="https://en.wikipedia.org/wiki/Cheng_Man-ch%27ing" target="_blank">-> Zheng Manqing</a></h2>
 
-, who brought Tai Chi Chuan to the West in '64 , when he moved from Taiwan to New York. Amongst other things, he famously said:
-
-> Invest in loss
+who brought Tai Chi Chuan to the West in '64, when he moved from Taiwan to New York.

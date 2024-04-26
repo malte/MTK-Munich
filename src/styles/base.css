@@ -39,6 +39,11 @@
     p {
         @apply max-w-[60ch];
     }
+    blockquote {
+        @apply text-2xl p-8;
+        font-variation-settings: "wdth" 115;
+        font-weight: 100;
+    }
 }
 @layer components {
 

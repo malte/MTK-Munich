@@ -35,21 +35,21 @@ const siteConfig: SiteConfig = {
     },
     headerNavLinks: [
         {
-            text: 'Home',
+            text: 'Tai Chi Chuan München',
             href: '/'
         },
         {
-            text: 'Curriculum',
+            text: 'Ma Tsun Kuen System',
             href: '/curriculum'
         },
         {
-            text: 'About',
+            text: 'About me',
             href: '/about'
         }
     ],
     footerNavLinks: [
         {
-            text: 'About',
+            text: 'About me',
             href: '/about'
         },
         {

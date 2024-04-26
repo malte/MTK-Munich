@@ -1,49 +1,42 @@
 ---
 layout: "../layouts/Layout.astro"
-title: "Curriculum"
+title: "Full System"
 ---
 
 ---
 
 ##### Standing Practice
 
-- Ma Bu
-- Ting Bu
-- Gung Bu
+- Ma Bu - Riders stance
+- Ting Bu - one footed stance
+- Gung Bu - Bow stance
 
 ---
 
 ##### Set of six tsaos (Exercise)
 
-These exercises train the body in specific way and build to foundation to all other elements of practice.
-They combine a relaxed body with coordinated movements.
+In combine a relaxion with coordination, these exercises build the foundation to all other elements of the practice.
 
-> if one part is still, all parts are still and if one part moves, all the part move
+> if one part is still, all parts are still and <br>if one part moves, all the parts move
 
 ---
 
 ##### Forms
 
-- Short Form
-- Long Form
-- Fast Form
+- Short Form - the daily practice
+- Long Form - a library of techniques, it follows the images form the yang long form
+- Fast Form - for practicing with actual speed and momentum
 
---
-
-- Partner Form
-- Sword Form
-- Saber Form
-- Spear Form
+- _Partner Form_
+- _Sword Form_
+- _Saber Form_
+- _Spear Form_
 
 ---
 
-##### Partner patterns for stepping and spatial awareness
+##### Partner patterns
 
-- Kilometros
-- Rombo
-- Da Lu
-- Saopapu
-- Strudeli
+There are some fixed partner exercises, that deal with distance, movement and balance.
 
 ---
 
@@ -55,6 +48,6 @@ reverse Breathing
 
 ##### I Ching Kung Set
 
-Ten Qigong Exercises, that include elements of the eight Brocades Qi Gong and I Jin Jing.
+Ten Qigong Exercises, that include elements of the Ba Duan Jing (eight Brocades Qi Gong) and I Jin Jing.
 
 ##### Free Tui Shou Practice
