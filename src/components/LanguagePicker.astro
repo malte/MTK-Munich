@@ -1,0 +1,25 @@
+---
+import { languages } from "../i18n/ui";
+---
+
+<ul class="flex flex-row">
+  {
+    Object.entries(languages).map(([lang]) => (
+      <li class="py-1">
+        <a class="uppercase hover:underline" href={`/${lang}/`}>
+          {lang}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  li:not(:last-of-type):after {
+    content: "/";
+    display: inline-block;
+    margin-left: -0.25em;
+  }
+  li:hover {
+  }
+</style>

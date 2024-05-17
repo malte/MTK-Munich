@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePicker from "../components/LanguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 import NavLink from "./NavLink.astro";
 // import ThemeToggle from "./ThemeToggle.astro";
 import siteConfig from "../data/site-config";
@@ -6,7 +10,7 @@ import siteConfig from "../data/site-config";
 const navLinks = siteConfig.headerNavLinks || [];
 ---
 
-<nav class="relative">
+<nav class="fixed  top-0 w-full px-4">
   {
     navLinks.length > 0 && (
       <div class="w-full relative z-50">
@@ -18,24 +22,25 @@ const navLinks = siteConfig.headerNavLinks || [];
         >
           <span class="menu-toggle-icon w-6 h-px relative" />
         </button>
-        <ul id="menu-items" class="menu flex gap-6 mt-2.5 w-full">
+        <div class="flex flex-row w-full  mt-2.5 justify-between">
+        <ul id="menu-items" class="menu flex gap-6">
           {navLinks.map((link) => (
             <li class="py-1">
               <NavLink
                 class="text-2xl hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base"
-                href={link.href}
+                href={`/${lang}${link.href}`}
               >
-                {link.text}
+                {t(link.text)}
               </NavLink>
             </li>
           ))}
         </ul>
+          <LanguagePicker />
+          <!-- <ThemeToggle /> -->
+        </div>
       </div>
     )
   }
-  <div class="absolute right-0 top-4 z-10 md:top-8">
-    <!-- <ThemeToggle /> -->
-  </div>
 </nav>
 
 <style>
