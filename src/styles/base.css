@@ -13,6 +13,8 @@
         font-style: italic;
         src: url(/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf) format("ttf");
     }
+    body {
+    }
     :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
@@ -27,8 +29,10 @@
     h3 {@apply text-2xl;}
     h4 {@apply text-xl;}
     h5 {
-        @apply font-[900] uppercase text-sm tracking-wide mt-2;
+        @apply font-[900] text-lg uppercase text-sm tracking-wide mt-2;
     }
+    h6 { @apply font-[900]}
+    a { @apply text-purple}
     .text-gradient {
         background-image: var(--accent-gradient);
         -webkit-background-clip: text;
@@ -46,5 +50,20 @@
     }
 }
 @layer components {
+    .snap-wrapper {
+        max-height: 100svh;
+        @apply overflow-y-scroll snap-y snap-mandatory snap-start;
+    }
+    .slide {
+        padding:10vh 1rem;            
+        border: 1px solid black;
+        @apply snap-start snap-normal relative grid;
+        place-items: center;
+
+        .inner {
+            text-align: left;
+            width:50vw;
+        }      
+    }
 
 }

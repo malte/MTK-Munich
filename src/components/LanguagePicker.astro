@@ -1,12 +1,17 @@
 ---
 import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+const thislang = getLangFromUrl(Astro.url);
 ---
 
 <ul class="flex flex-row">
   {
     Object.entries(languages).map(([lang]) => (
       <li class="py-1">
-        <a class="uppercase hover:underline" href={`/${lang}/`}>
+        <a
+          class:list={["uppercase hover:border-b-2 border-purple"]}
+          href={`/${lang}/`}
+        >
           {lang}
         </a>
       </li>

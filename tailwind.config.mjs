@@ -19,6 +19,9 @@ export default {
 			'5xl': ['3.815rem', '4rem'],
 		},
 		extend: {
+		    colors: {
+			'purple': '#bb00ff',
+		}
 		}
 	},
   plugins: [

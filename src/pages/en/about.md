@@ -1,7 +1,10 @@
 ---
-layout: "../layouts/Layout.astro"
+layout: "../../layouts/Layout.astro"
 title: "About"
 ---
+
+<section class="slide">
+<div class="inner">
 
 My name is Malte and my Tai Chi Journey started 2012 in Berlin Neukölln. I started the practice to fix a shoulder injury, but was then quickly hooked by the intriguing movements and concepts.
 My teacher in Berlin was
@@ -20,3 +23,6 @@ It is a "philosophy that permeates in through the body", which is a quote from
 a former chinese province govourner and Fernandos teacher, who learned Tai Chi Chuan from a captive "strange man" — a taoist. Later Ma Tsun Kuen had to escape the communists during the cultural revolution. He exiled to Argentina, where Fernando became his student and later his successor.
 You can read an interview with Fernando about his time with Ma Tsun Kuen here: [link]
 Ma Tsun Kuen also was said to be friends with the famous <a href="https://en.wikipedia.org/wiki/Cheng_Man-ch%27ing" target="_blank">-> Zheng Manqing</a> who brought Tai Chi Chuan to the West in '64, when he moved from Taiwan to New York.
+
+</div>
+</section>
