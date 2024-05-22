@@ -37,7 +37,7 @@ Let's look at some humorous nicknames, that hint to the true nature of its pract
 It comes from China, it is a martial art (fist / karate), it is a complete system that focuses on strengthening the health and rejuvenating the body (like yoga), and it can be practiced by people of old age, be that because their body is still young through practice, or because the practice is not demanding on older muscles and bones — both are valid points.
 And finally, as Master Ma (Tun Kuen) has put it:
 
-> Tai Chi is a philosophy that is understood through the body.
+> Tai Chi is a philosophy,<br> that is understood through the body.
 
 </div>
 </section>
@@ -59,7 +59,7 @@ If one part is still, all parts are still and if one part moves, all the part mo
 Reconnect to yourself, through harmony and relaxation, balance and focus.
 Regular practice works on your posture, your breathing, the ability to cope with stress, releases tension and improves your balance. It can quiet the monkey mind and strengthen your mental focus. There is also no age boundary, this is a practice you can keep on doing, on and on, and it only gets better.
 
-The health benefits of practicing Tai Chi are numerous and well documented even in western medicine. Here are some links on [Diabetes](https://pubmed.ncbi.nlm.nih.gov/38313854/) [Parkinsons](https://pubmed.ncbi.nlm.nih.gov/35125106/) [Insomnia](https://pubmed.ncbi.nlm.nih.gov/33587135/) [Mental Health & Depression](https://pubmed.ncbi.nlm.nih.gov/36833525/)
+The health benefits of practicing Tai Chi are numerous and well documented even in western medicine. Here are some links on<br> [Diabetes](https://pubmed.ncbi.nlm.nih.gov/38313854/), [Parkinsons](https://pubmed.ncbi.nlm.nih.gov/35125106/), [Insomnia](https://pubmed.ncbi.nlm.nih.gov/33587135/), [Mental Health & Depression](https://pubmed.ncbi.nlm.nih.gov/36833525/)
 
 **Disclaimer**
 I am not a doctor or in anyway medically trained. These links do not reflect my personal opinion, but might work as a starting point for the interested reader.
