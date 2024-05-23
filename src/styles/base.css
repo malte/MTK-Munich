@@ -13,8 +13,6 @@
         font-style: italic;
         src: url(/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf) format("ttf");
     }
-    body {
-    }
     :root {
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
@@ -53,8 +51,6 @@
     }
 }
 @layer components {
-    .snap-wrapper {
-    }
     .slide {
         padding:10vh 1rem;            
         border: 1px solid black;
@@ -65,9 +61,8 @@
             h1, h2, h3, h4, p, ul, ol {
                 @apply mb-4;
             }
-
             text-align: left;
-            width:50vw;
+            @apply mx-auto w-[80%] sm:w-1/2;
         }      
     }
 

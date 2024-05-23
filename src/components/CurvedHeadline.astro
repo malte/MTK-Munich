@@ -1,54 +1,63 @@
 ---
-const { tag = "h2", type, class: className, ...props } = Astro.props;
+import { generateUniqueId } from "../utils.js";
+
+const uniqueId = generateUniqueId();
+const {
+  tag = "h2",
+  type,
+  offset = 0,
+  class: className,
+  ...props
+} = Astro.props;
 const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const headlineTag = allowedTags.includes(tag) ? tag : "h2";
 ---
 
 <div
-  class="absolute w-[1200px] top-[-20%] left-0 uppercase font-extrabold text-sm tracking-wider !text-purple"
+  id={uniqueId}
+  class:list={[className, "font-extrabold text-2xl pointer-events-none	"]}
 >
   <Fragment set:html={`<${headlineTag}>`}>
-    <svg viewBox="0 0 220 220">
+    <svg viewBox="0 0 1000 1000">
       <path
         id="curve"
         fill="transparent"
         stroke="#0000c8"
-        stroke-width="0.1"
+        stroke-width="0"
         d="
-        M 110,110
-        m -100,0
-        a 200,200
+        M 500,500
+        m -400,400
+        a 500,500
         0
         0,1
-        200,0"
+        800,-400"
       ></path>
-      <text width="500">
+      <text width="500" class="text-blue-600">
         <textPath href="#curve" class="animated-text" startOffset="0">
           <slot />
         </textPath>
       </text>
     </svg>
   </Fragment>
-</div>
-<div class="spacer h-[200px]"></div>
+  <script define:vars={{ uniqueId, offset }} is:inline>
+    const div = document.getElementById(uniqueId);
+    const textPath = div.querySelector("textPath");
 
-<style>
-  .animated-text {
-    startoffset: var(--scroll);
-  }
-</style>
-<script is:inline>
-  const textPath = document.querySelector("textPath");
-  window.addEventListener(
-    "scroll",
-    () => {
-      const startOffset =
-        window.pageYOffSet ||
-        (document.documentElement.scrollTop /
-          (document.body.offsetHeight - window.innerHeight)) *
-          300;
-      textPath.setAttribute("startOffset", startOffset);
-    },
-    false
-  );
-</script>
+    window.addEventListener(
+      "scroll",
+      () => {
+        const startOffset =
+          100 *
+          Math.sin(
+            offset +
+              (document.documentElement.scrollTop /
+                (document.body.offsetHeight - window.innerHeight)) *
+                5
+          );
+        //console.log(startOffset);
+        textPath.setAttribute("startOffset", `${startOffset}%`);
+      },
+      false
+    );
+  </script>
+</div>
