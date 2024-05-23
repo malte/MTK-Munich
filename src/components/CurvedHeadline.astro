@@ -18,19 +18,18 @@ const headlineTag = allowedTags.includes(tag) ? tag : "h2";
   class:list={[className, "font-extrabold text-2xl pointer-events-none	"]}
 >
   <Fragment set:html={`<${headlineTag}>`}>
-    <svg viewBox="0 0 1000 1000">
+    <svg viewBox="0 0 1000 500">
       <path
         id="curve"
         fill="transparent"
         stroke="#0000c8"
-        stroke-width="0"
+        stroke-width="0.1"
         d="
-        M 500,500
-        m -400,400
-        a 500,500
+        M 20,100
+        a 1000,1000
         0
         0,1
-        800,-400"
+        1000,500"
       ></path>
       <text width="500" class="text-blue-600">
         <textPath href="#curve" class="animated-text" startOffset="0">
@@ -46,14 +45,11 @@ const headlineTag = allowedTags.includes(tag) ? tag : "h2";
     window.addEventListener(
       "scroll",
       () => {
-        const startOffset =
-          100 *
-          Math.sin(
-            offset +
-              (document.documentElement.scrollTop /
-                (document.body.offsetHeight - window.innerHeight)) *
-                5
-          );
+        const scrollPos =
+          document.documentElement.scrollTop /
+          (document.body.offsetHeight - window.innerHeight);
+        console.log(scrollPos);
+        const startOffset = 50 * Math.sin(eval(offset) + scrollPos * 15);
         //console.log(startOffset);
         textPath.setAttribute("startOffset", `${startOffset}%`);
       },
