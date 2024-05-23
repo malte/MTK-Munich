@@ -1,14 +1,54 @@
 ---
-const { heading, label, type } = Astro.props;
+const { tag = "h2", type, class: className, ...props } = Astro.props;
+const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
+const headlineTag = allowedTags.includes(tag) ? tag : "h2";
 ---
 
-<svg viewBox="0 0 500 500">
-  <path
-    id="curve"
-    fill="transparent"
-    d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"
-  ></path>
-  <text width="500">
-    <textPath xlink:href="#curve">{label} </textPath>
-  </text>
-</svg>
+<div
+  class="absolute w-[1200px] top-[-20%] left-0 uppercase font-extrabold text-sm tracking-wider !text-purple"
+>
+  <Fragment set:html={`<${headlineTag}>`}>
+    <svg viewBox="0 0 220 220">
+      <path
+        id="curve"
+        fill="transparent"
+        stroke="#0000c8"
+        stroke-width="0.1"
+        d="
+        M 110,110
+        m -100,0
+        a 200,200
+        0
+        0,1
+        200,0"
+      ></path>
+      <text width="500">
+        <textPath href="#curve" class="animated-text" startOffset="0">
+          <slot />
+        </textPath>
+      </text>
+    </svg>
+  </Fragment>
+</div>
+<div class="spacer h-[200px]"></div>
+
+<style>
+  .animated-text {
+    startoffset: var(--scroll);
+  }
+</style>
+<script is:inline>
+  const textPath = document.querySelector("textPath");
+  window.addEventListener(
+    "scroll",
+    () => {
+      const startOffset =
+        window.pageYOffSet ||
+        (document.documentElement.scrollTop /
+          (document.body.offsetHeight - window.innerHeight)) *
+          300;
+      textPath.setAttribute("startOffset", startOffset);
+    },
+    false
+  );
+</script>

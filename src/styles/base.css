@@ -24,7 +24,7 @@
                 rgb(var(--accent-light)) 30%,
                 white 60%);
     }
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4 {
         @apply mb-4;
     }
     h1 {@apply text-3xl;}
@@ -54,17 +54,15 @@
 }
 @layer components {
     .snap-wrapper {
-        max-height: 100svh;
-        @apply overflow-y-scroll snap-y snap-mandatory snap-start;
     }
     .slide {
         padding:10vh 1rem;            
         border: 1px solid black;
-        @apply snap-start snap-normal relative grid;
+        @apply relative grid;
         place-items: center;
 
         .inner {
-            h1, h2, h3, h4, h5, h6, p, ul, ol {
+            h1, h2, h3, h4, p, ul, ol {
                 @apply mb-4;
             }
 

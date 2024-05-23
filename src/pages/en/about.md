@@ -21,7 +21,8 @@ It is a "philosophy that permeates in through the body", which is a quote from
 ## Ma Tsun Kuen
 
 a former chinese province govourner and Fernandos teacher, who learned Tai Chi Chuan from a captive "strange man" — a taoist. Later Ma Tsun Kuen had to escape the communists during the cultural revolution. He exiled to Argentina, where Fernando became his student and later his successor.
-You can read an interview with Fernando about his time with Ma Tsun Kuen here: [link]
+You can read an interview with Fernando about his time with Ma Tsun Kuen 
+<a href="http://matsunkuen.com/interview-with-ronnie-robbinson/" target="_blank">-> here</a>.
 Ma Tsun Kuen also was said to be friends with the famous <a href="https://en.wikipedia.org/wiki/Cheng_Man-ch%27ing" target="_blank">-> Zheng Manqing</a> who brought Tai Chi Chuan to the West in '64, when he moved from Taiwan to New York.
 
 </div>

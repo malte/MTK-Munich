@@ -18,33 +18,27 @@ Traditionally, tai chi students are not given grades (more a japanese and korean
 <section class="slide">
 <div class="inner">
 
-##### Student - yellow
+### 5º Student - yellow
+min. 3 month of practice
 
 ###### Standing Practice
 
-In standing practice, we teach the body to let go of unnecessary tension, and to develop a good, upright, and relaxed posture.
-
-These include:
-
-- Ma Bu, the riders stance
-- Ting Bu: one legged stance
-- Gung Bu: the Bow stance.
-
-Of these Ma Bu is the most important, and every class begins with it.
+In standing practice, we teach the body to let go of unnecessary tension, and to develop a good, upright, and relaxed posture: Ma Bu, horse (riders) stance and Ting Bu: false leg stance
 
 ###### Set of six Tsao (Exercises)
 
 These exercises combine a relaxed body sensation with coordinated movements. They function as a foundation to all other elements of practice.
 
----
-
-##### Student - orange
-
 ###### The short form or "shisan shi"
 
 the first form we practice. It is easy to remember, symmetric and focuses on the 13 energies of Tai Chi. Peng, Lu, Ji, An, Kai, Lie, Zhou, Kao + the 5 directions.
 
-###### Free Tui Shou Practice
+---
+
+### 4º Student - orange
+min. 9 month of practice
+
+###### Basic and Free Tui Shou Practice
 
 Often called pushing hands, although the term "pushing" is somewhat misleading. It should be called maybe "sensing" or "listening" hands.
 In this exercise we examine moving energies with a partner in a cooperative exchange. We try encounter the postures and techniques from the form in the exchange, to fill the form with meaning and the tui shou practice with intention.
@@ -52,7 +46,8 @@ Sometimes it can feel like a play fight, which is fun, but holds the danger of f
 
 ---
 
-##### Student - blue
+### 3º Student - green
+min. 18 month of practice
 
 ###### Movement Patterns
 
@@ -60,28 +55,36 @@ There are a 4 of partner exercise patterns in the Ma Tsun Kuen system. These dea
 Kilometros, Rombo, Da Lu, and Saopapu.
 
 ---
+### 2º Student - blue
+min. 3 years of practice
 
-##### Student - brown
+###### The long form
+It follows the images of the Yang Tai Chi long form and serves as a body for the techniques of Ma Tsun Kuen Tai Chi Chuan.
+
+---
+
+### 1º Student - brown
+min. 5 years of practice
 
 ###### Daoist Breathing
 
 Is a breathing method, used to cultivate Qi in the lower dantien.
 
-###### I Ching Kung Set
+###### Martial chi kung (I Ching Kung)
 
-A set of ten Qigong Exercises, that build on daoist breathing and work with the "Yi" (will, intention) in form of mental images of reaching and stretching.
-
----
-
-##### teacher - 1st black
-
-###### The long form
-
-It follows the images of the Yang Tai Chi long form and serves as a body for the techniques of Ma Tsun Kuen Tai Chi Chuan.
+A set of ten Qigong Exercises, that is build on daoist breathing and work with the "Yi" (will, intention) in form of mental images of reaching and stretching.
 
 ---
 
-##### teacher - 2nd black
+### 1st Tuan  -  black
+min. 7 years of practice
+
+Repeat all of the above
+
+---
+
+### 2nd Tuan  -  black
+when master decides
 
 ###### The fast form
 
@@ -89,13 +92,25 @@ It is designed to practice dealing with momentum and mass and will quickly throw
 
 ---
 
-##### teacher - 3rd black
+### 3rd Tuan  -  black
+when master decides
 
-###### San Shou
+###### San Shou Tui Ta
 
-The partner form examines martial aspects of Tai Chi Chuan. You need a partner, obviously, to practice this form and it is taught after reaching the 2nd Dan. This form has the emphasis on the idea of fighting.
+The fighting form is a partner form examines martial aspects of Tai Chi Chuan.
 
-###### Weapon Forms (Sword, Saber, Spear)
+### 4rd Tuan  -  black
+when master decides
+
+###### Hand/fist strikes locks and pressures
+###### Free fighting
+friendly, of course
+
+
+### 5rd Tuan  -  black
+when master decides
+
+###### Weapon Forms (Saber, Spear, Sword)
 
 </div>
 </section>

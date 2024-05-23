@@ -26,5 +26,20 @@ const { title } = Astro.props;
       <Nav />
       <slot />
     </div>
+    <script is:inline>
+      window.addEventListener(
+        "scroll",
+        () => {
+          document.body.style.setProperty(
+            "--scroll",
+            window.pageYOffSet ||
+              (document.documentElement.scrollTop /
+                (document.body.offsetHeight - window.innerHeight)) *
+                100
+          );
+        },
+        false
+      );
+    </script>
   </body>
 </html>
