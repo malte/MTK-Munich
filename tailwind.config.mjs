@@ -20,7 +20,8 @@ export default {
 		},
 		extend: {
 		    colors: {
-			'purple': '#bb00ff',
+			'terracotta': 'rgba(253,78,78,1.0)',
+			'lazuli': 'rgba(78,78,198,1.0)',
 		}
 		}
 	},

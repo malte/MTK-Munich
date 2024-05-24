@@ -14,27 +14,36 @@ const {
 const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const headlineTag = allowedTags.includes(tag) ? tag : "h2";
 const curves = [
-  "M 100,100 a 1200,1200 0 0,1 800,300",
-  "M 100,300 a 700,700 0 0,1 800,0",
-  "M 100,400 a 1200,1200 0 0,1 800,-300",
-  "M 100,100 a 700,700 0 0,0 800,0",
+  "M 50,50 a 1200,1200 0 0,1 950,400",
+  "M 50,300 a 700,700 0 0,1 950,0",
+  "M 100,500 a 150,150 0 1,1 300,0",
+  "M 50,50 a 700,700 0 0,0 950,0",
 ];
 const curve = curves[type];
 ---
 
 <div
   id={uniqueId}
-  class:list={[className, "font-extrabold pointer-events-none	"]}
+  class:list={[
+    "curved-headline font-extrabold pointer-events-none fill-terracotta",
+    className,
+  ]}
 >
   <Fragment set:html={`<${headlineTag}>`} />
   <svg viewBox="0 0 1000 500">
+    <rect
+      width="1000"
+      height="500"
+      x="0"
+      y="0"
+      style="fill:transparent;stroke:black;stroke-width:0;"></rect>
     <path
       id={curveId}
       fill="transparent"
       stroke="#0000c8"
       stroke-width="0"
       d={curve}></path>
-    <text width="500" class="text-blue-600">
+    <text width="500" class="">
       <textPath href=`#${curveId}` class="animated-text" startOffset="0">
         <slot />
       </textPath>
@@ -49,10 +58,11 @@ const curve = curves[type];
       "scroll",
       () => {
         const scrollPos =
-          document.documentElement.scrollTop /
+          (10 * document.documentElement.scrollTop) /
           (document.body.offsetHeight - window.innerHeight);
-        console.log(scrollPos);
-        const startOffset = 50 * Math.sin(eval(offset) + scrollPos * 15);
+        //console.log(scrollPos);
+        const startOffset =
+          10 * (Math.sin((eval(offset) + scrollPos) * 2) + 0.5);
         //console.log(startOffset);
         textPath.setAttribute("startOffset", `${startOffset}%`);
       },
@@ -60,3 +70,6 @@ const curve = curves[type];
     );
   </script>
 </div>
+<div class="h-[200px] sm:h-[400px] block"></div>
+
+<style></style>

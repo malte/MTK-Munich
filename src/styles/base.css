@@ -14,13 +14,16 @@
         src: url(/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf) format("ttf");
     }
     :root {
-        --accent: 136, 58, 234;
-        --accent-light: 224, 204, 250;
-        --accent-dark: 49, 10, 101;
+        --terracotta: 253, 78, 78;
+        --lazuli: 78, 78, 198;
+        --raspberry: 49, 10, 101;
         --accent-gradient: linear-gradient(45deg,
-                rgb(var(--accent)),
-                rgb(var(--accent-light)) 30%,
-                white 60%);
+                rgb(var(--terracotta)),
+                rgb(var(--raspberry)) 30%,
+                rgb(var(--lazuli)) 60%);
+    }
+    body {
+        
     }
     h1, h2, h3, h4 {
         @apply mb-4;
@@ -33,7 +36,7 @@
         @apply font-[900] text-lg uppercase text-sm tracking-wide ;
     }
     h6 { @apply font-[900]}
-    a { @apply text-purple}
+    a { @apply text-lazuli}
     .text-gradient {
         background-image: var(--accent-gradient);
         -webkit-background-clip: text;
@@ -52,8 +55,7 @@
 }
 @layer components {
     .slide {
-        padding:10vh 1rem;            
-        border: 1px solid black;
+        padding:0 1rem;            
         @apply relative grid;
         place-items: center;
 
@@ -64,6 +66,24 @@
             text-align: left;
             @apply mx-auto w-[80%] sm:w-1/2;
         }      
+    }
+    .curved-headline {
+        @apply absolute ;
+        &.centered {
+            @apply left-0 sm:left-1/2 sm:translate-x-[-50%];
+        }
+        &.left-side {
+            @apply left-0;
+        }
+        &.right-side {
+            @apply sm:right-0;
+        }
+        &.short-text {
+            @apply w-[800px] sm:w-[1500px] ;
+        }
+        &.long-text {
+            @apply w-[600px] sm:w-[1500px];
+        }
     }
 
 }
