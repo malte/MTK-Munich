@@ -2,6 +2,8 @@
 import { generateUniqueId } from "../utils.js";
 
 const uniqueId = generateUniqueId();
+const curveId = generateUniqueId();
+
 const {
   tag = "h2",
   type,
@@ -11,33 +13,34 @@ const {
 } = Astro.props;
 const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const headlineTag = allowedTags.includes(tag) ? tag : "h2";
+const curves = [
+  "M 100,100 a 1200,1200 0 0,1 800,300",
+  "M 100,300 a 700,700 0 0,1 800,0",
+  "M 100,400 a 1200,1200 0 0,1 800,-300",
+  "M 100,100 a 700,700 0 0,0 800,0",
+];
+const curve = curves[type];
 ---
 
 <div
   id={uniqueId}
-  class:list={[className, "font-extrabold text-2xl pointer-events-none	"]}
+  class:list={[className, "font-extrabold pointer-events-none	"]}
 >
-  <Fragment set:html={`<${headlineTag}>`}>
-    <svg viewBox="0 0 1000 500">
-      <path
-        id="curve"
-        fill="transparent"
-        stroke="#0000c8"
-        stroke-width="0.1"
-        d="
-        M 20,100
-        a 1000,1000
-        0
-        0,1
-        1000,500"
-      ></path>
-      <text width="500" class="text-blue-600">
-        <textPath href="#curve" class="animated-text" startOffset="0">
-          <slot />
-        </textPath>
-      </text>
-    </svg>
-  </Fragment>
+  <Fragment set:html={`<${headlineTag}>`} />
+  <svg viewBox="0 0 1000 500">
+    <path
+      id={curveId}
+      fill="transparent"
+      stroke="#0000c8"
+      stroke-width="0"
+      d={curve}></path>
+    <text width="500" class="text-blue-600">
+      <textPath href=`#${curveId}` class="animated-text" startOffset="0">
+        <slot />
+      </textPath>
+    </text>
+  </svg>
+  <Fragment set:html={`</${headlineTag}>`} />
   <script define:vars={{ uniqueId, offset }} is:inline>
     const div = document.getElementById(uniqueId);
     const textPath = div.querySelector("textPath");
