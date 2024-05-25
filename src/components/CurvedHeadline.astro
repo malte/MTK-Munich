@@ -4,17 +4,11 @@ import { generateUniqueId } from "../utils.js";
 const uniqueId = generateUniqueId();
 const curveId = generateUniqueId();
 
-const {
-  tag = "h2",
-  type,
-  offset = 0,
-  class: className,
-  ...props
-} = Astro.props;
+const { tag = "h2", type, class: className, ...props } = Astro.props;
 const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const headlineTag = allowedTags.includes(tag) ? tag : "h2";
 const curves = [
-  "M 50,50 a 1200,1200 0 0,1 950,400",
+  "M 950,400 a 1200,1200 0 0,0 -900,-350",
   "M 50,300 a 700,700 0 0,1 950,0",
   "M 100,500 a 150,150 0 1,1 300,0",
   "M 50,50 a 700,700 0 0,0 950,0",
@@ -30,7 +24,7 @@ const curve = curves[type];
   ]}
 >
   <Fragment set:html={`<${headlineTag}>`} />
-  <svg viewBox="0 0 1000 500">
+  <svg viewBox="0 0 1000 500" class="absolute">
     <rect
       width="1000"
       height="500"
@@ -43,26 +37,29 @@ const curve = curves[type];
       stroke="#0000c8"
       stroke-width="0"
       d={curve}></path>
-    <text width="500" class="">
-      <textPath href=`#${curveId}` class="animated-text" startOffset="0">
+    <text class="">
+      <textPath
+        lengthAdjust="spacing"
+        href=`#${curveId}`
+        class="animated-text"
+        startOffset="0"
+      >
         <slot />
       </textPath>
     </text>
   </svg>
   <Fragment set:html={`</${headlineTag}>`} />
-  <script define:vars={{ uniqueId, offset }} is:inline>
+  <script define:vars={{ uniqueId }} is:inline>
     const div = document.getElementById(uniqueId);
     const textPath = div.querySelector("textPath");
 
     window.addEventListener(
       "scroll",
       () => {
-        const scrollPos =
-          (10 * document.documentElement.scrollTop) /
-          (document.body.offsetHeight - window.innerHeight);
+        const scrollPos = document.documentElement.scrollTop / 200;
+        // / (document.body.offsetHeight - window.innerHeight);
         //console.log(scrollPos);
-        const startOffset =
-          10 * (Math.sin((eval(offset) + scrollPos) * 2) + 0.5);
+        const startOffset = 25 * (Math.sin(scrollPos - 89) + 1);
         //console.log(startOffset);
         textPath.setAttribute("startOffset", `${startOffset}%`);
       },
@@ -70,6 +67,4 @@ const curve = curves[type];
     );
   </script>
 </div>
-<div class="h-[200px] sm:h-[400px] block"></div>
-
-<style></style>
+<div class="h-[300px]"></div>

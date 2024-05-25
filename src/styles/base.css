@@ -68,7 +68,7 @@
         }      
     }
     .curved-headline {
-        @apply absolute ;
+        @apply absolute;
         &.centered {
             @apply left-0 sm:left-1/2 sm:translate-x-[-50%];
         }
