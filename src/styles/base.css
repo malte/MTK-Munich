@@ -68,7 +68,7 @@
         }      
     }
     .curved-headline {
-        @apply absolute left-0 sm:left-1/2 sm:translate-x-[-50%] w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px];
+        @apply absolute left-1/2 translate-x-[-50%] w-[700px] sm:w-[900px] md:w-[1200px] lg:w-[2000px];
     }
 
 }
