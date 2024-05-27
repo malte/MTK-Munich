@@ -68,22 +68,7 @@
         }      
     }
     .curved-headline {
-        @apply absolute;
-        &.centered {
-            @apply left-0 sm:left-1/2 sm:translate-x-[-50%];
-        }
-        &.left-side {
-            @apply left-0;
-        }
-        &.right-side {
-            @apply sm:right-0;
-        }
-        &.short-text {
-            @apply w-[800px] sm:w-[1500px] ;
-        }
-        &.long-text {
-            @apply w-[600px] sm:w-[1500px];
-        }
+        @apply absolute left-0 sm:left-1/2 sm:translate-x-[-50%] w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px];
     }
 
 }

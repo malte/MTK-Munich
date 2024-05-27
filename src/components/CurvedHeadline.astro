@@ -4,29 +4,38 @@ import { generateUniqueId } from "../utils.js";
 const uniqueId = generateUniqueId();
 const curveId = generateUniqueId();
 
-const { tag = "h2", direction, type, class: className, ...props } = Astro.props;
+const {
+  tag = "h2",
+  direction = "R2L",
+  offset = 0,
+  type = "smile",
+  class: className,
+  ...props
+} = Astro.props;
 const allowedTags = ["h1", "h2", "h3", "h4", "h5", "h6"];
 const headlineTag = allowedTags.includes(tag) ? tag : "h2";
-const curves = [
-  "M 50,50 a 1200,1200 0 0,1 900,350",
-  "M 50,300 a 700,700 0 0,1 950,0",
-  "M 100,500 a 150,150 0 0,0 300,0",
-  "M 50,50 a 700,700 0 0,0 950,0",
-];
+const curves = {
+  slope: "M 50,50 a 1200,1200 0 0,1 900,350",
+  frown: "M 50,300 a 700,700 0 0,1 950,0",
+  slide: "M 100,500 a 150,150 0 0,0 300,0",
+  smile: "M 50,50 a 700,700 0 0,0 950,0",
+  hill: "M 50,500 a 1200,1200 0 0,1 950,-400",
+  kicker: "M 50,450 a 1200,1200 0 0,0 950,-400",
+  quarter: "M 100,500 a 150,150 0 1,1 300,-300",
+};
 const curve = curves[type];
+const spacing = tag == "h2" ? "h-[80px] md:h-[300px]" : "h-0";
 ---
 
 <div
   direction={direction}
+  offset={offset}
   {...props}
   id={uniqueId}
-  class:list={[
-    "curved-headline font-extrabold pointer-events-none fill-terracotta",
-    className,
-  ]}
+  class:list={["curved-headline font-extrabold pointer-events-none", className]}
 >
   <Fragment set:html={`<${headlineTag}>`} />
-  <svg viewBox="0 0 1000 500" class="absolute">
+  <svg viewBox="0 0 1000 500">
     <rect
       width="1000"
       height="500"
@@ -51,22 +60,5 @@ const curve = curves[type];
     </text>
   </svg>
   <Fragment set:html={`</${headlineTag}>`} />
-  <script define:vars={{ uniqueId }} is:inline>
-    // const div = document.getElementById(uniqueId);
-    // const textPath = div.querySelector("textPath");
-
-    // window.addEventListener(
-    //   "scroll",
-    //   () => {
-    //     const scrollPos = document.documentElement.scrollTop / 200;
-    //     // / (document.body.offsetHeight - window.innerHeight);
-    //     //console.log(scrollPos);
-    //     const startOffset = 25 * (Math.sin(scrollPos - 89) + 1);
-    //     //console.log(startOffset);
-    //     textPath.setAttribute("startOffset", `${startOffset}%`);
-    //   },
-    //   false
-    // );
-  </script>
 </div>
-<div class="h-[300px]"></div>
+<div class={spacing}></div>

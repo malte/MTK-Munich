@@ -26,49 +26,28 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="relative overflow-x-hidden">
+    <div class="relative overflow-x-hidden min-h-[200vh]">
       <Nav />
       <slot />
     </div>
     <script is:inline>
-      function updateScroll() {
-        document.body.style.setProperty(
-          "--scroll",
-          window.pageYOffset ||
-            (document.documentElement.scrollTop /
-              (document.body.offsetHeight - window.innerHeight)) *
-              100
-        );
-      }
-
       const curvedHeadlines = document.querySelectorAll(".curved-headline");
 
       function updateCurvedHeadlines() {
-        //use each elements custom attribute offset to set an individual startOffset of the textPath
-
         curvedHeadlines.forEach((ele) => {
           const textPath = ele.querySelector("textPath");
           const direction = ele.getAttribute("direction");
+          const offset = parseInt(ele.getAttribute("offset"));
           const eleTop = ele.getBoundingClientRect().top;
-          const eleHeight = ele.getBoundingClientRect().height;
-          const eleBottom = eleTop + eleHeight;
-          const eleCenter = eleTop + eleHeight / 2;
-          const eleCenterOffset = eleCenter / window.innerHeight;
-          const eleTopOffset = eleTop / window.innerHeight;
-          const eleBottomOffset = eleBottom / window.innerHeight;
-          const eleOffset = eleTopOffset + eleHeight / window.innerHeight;
-          console.log(direction);
           const eleOffsetPercent =
-            direction == "L2R" ? eleOffset * 100 : 100 - eleOffset * 100;
+            direction == "R2L"
+              ? eleTop / 5 + offset
+              : 100 - eleTop / 5 + offset;
           textPath.setAttribute("startOffset", `${eleOffsetPercent}%`);
-          // add curvedHeadlineOffsetPercent to the text innerHtml value
-          // reduce to float with 2 decimals
-          //textPath.innerHTML = `${curvedHeadlineOffsetPercent.toFixed(2)}%`;
         });
       }
 
       function update() {
-        updateScroll();
         updateCurvedHeadlines();
         requestAnimationFrame(update);
       }
