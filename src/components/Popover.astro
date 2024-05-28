@@ -1,0 +1,20 @@
+---
+import { squooshImageService } from "astro/config";
+import { generateUniqueId } from "../utils.js";
+const { buttonText, class: className, ...props } = Astro.props;
+const uniqueId = generateUniqueId();
+---
+
+<button class="text-lazuli inline-block" popovertarget={uniqueId}
+  >{buttonText}</button
+>
+<div popover id={uniqueId}>
+  <div
+    class:list={[
+      "p-8 max-w-3/4 sm:max-w-1/2 md:max-w-1/3 shadow-lg rounded-lg aspect-square flex justify-center items-center",
+      className,
+    ]}
+  >
+    <slot />
+  </div>
+</div>

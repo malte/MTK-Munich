@@ -3,40 +3,30 @@ layout: "../../layouts/Layout.astro"
 title: "Curriculum"
 ---
 
-<section class="slide">
-<div class="inner">
+import CurvedHeadline from '../../components/CurvedHeadline.astro';
+import Card from '../../components/Card.astro';
+
 
 # The Curriculum
 
-## — what we practice
+
+<CurvedHeadline tag="h2" type="frown" direction="R2L" offset="50" class="sm:top-[-20px]  fill-terracotta">What we practice:</CurvedHeadline>
+
 
 Traditionally, tai chi students are not given grades (more a japanese and korean than a chinese thing). To keep an overview over the students level and to structure the curriculum, they were introduced to the ma tsun kuen system anyway and the curriculum is structured in these grades:
 
-</div>
-</section>
+<div class="cards-grid">
 
-<section class="slide">
-<div class="inner">
-
-### 5º Student - yellow
-min. 3 month of practice
-
+<Card title="5º Student - yellow" meta="min. 3 month of practice" class="bg-yellow-300">
 ###### Standing Practice
-
 In standing practice, we teach the body to let go of unnecessary tension, and to develop a good, upright, and relaxed posture: Ma Bu, horse (riders) stance and Ting Bu: false leg stance
-
 ###### Set of six Tsao (Exercises)
-
 These exercises combine a relaxed body sensation with coordinated movements. They function as a foundation to all other elements of practice.
-
 ###### The short form or "shisan shi"
-
 the first form we practice. It is easy to remember, symmetric and focuses on the 13 energies of Tai Chi. Peng, Lu, Ji, An, Kai, Lie, Zhou, Kao + the 5 directions.
+</Card>
 
----
-
-### 4º Student - orange
-min. 9 month of practice
+<Card title=" 4º Student - orange" meta="min. 9 month of practice" class="bg-amber-400">
 
 ###### Basic and Free Tui Shou Practice
 
@@ -44,73 +34,62 @@ Often called pushing hands, although the term "pushing" is somewhat misleading. 
 In this exercise we examine moving energies with a partner in a cooperative exchange. We try encounter the postures and techniques from the form in the exchange, to fill the form with meaning and the tui shou practice with intention.
 Sometimes it can feel like a play fight, which is fun, but holds the danger of forgetting the "sensing" or "listening" part.
 
----
+</Card>
 
-### 3º Student - green
-min. 18 month of practice
+<Card title="3º Student - green" meta="min. 18 month of practice" class="bg-green-500">
 
 ###### Movement Patterns
-
-There are a 4 of partner exercise patterns in the Ma Tsun Kuen system. These deal with understanding distance, stepping, direction of force, changing direction, and rotational forces.
+There are four partner exercise patterns in the Ma Tsun Kuen system. These deal with understanding distance, stepping, direction of force, changing direction, and rotational forces.
 Kilometros, Rombo, Da Lu, and Saopapu.
+</Card>
 
----
-### 2º Student - blue
-min. 3 years of practice
+<Card title=" 2º Student - blue" meta="min. 3 years of practice" class="bg-blue-500">
 
 ###### The long form
 It follows the images of the Yang Tai Chi long form and serves as a body for the techniques of Ma Tsun Kuen Tai Chi Chuan.
 
----
+</Card>
 
-### 1º Student - brown
-min. 5 years of practice
+<Card title="1º Student - brown" meta="min. 5 years of practice" class="bg-amber-900 text-stone-100">
 
 ###### Daoist Breathing
-
 Is a breathing method, used to cultivate Qi in the lower dantien.
 
 ###### Martial chi kung (I Ching Kung)
-
 A set of ten Qigong Exercises, that is build on daoist breathing and work with the "Yi" (will, intention) in form of mental images of reaching and stretching.
 
----
+</Card>
 
-### 1st Tuan  -  black
-min. 7 years of practice
+<Card title="1st Tuan  -  black" meta="min. 7 years of practice" class="bg-stone-800 text-stone-100">
 
-Repeat all of the above
+Repeat all of the above on a higher level.
 
----
+</Card>
 
-### 2nd Tuan  -  black
-when master decides
+<Card title="2nd Tuan  -  black" meta="when master decides" class="bg-stone-800 text-stone-100">
 
 ###### The fast form
-
 It is designed to practice dealing with momentum and mass and will quickly throw you of balance, if you have not developed roots that why it is learned later in the curriculum.
 
----
+</Card>
 
-### 3rd Tuan  -  black
-when master decides
+<Card title="3rd Tuan  -  black" meta="when master decides" class="bg-stone-800 text-stone-100">
 
 ###### San Shou Tui Ta
-
 The fighting form is a partner form examines martial aspects of Tai Chi Chuan.
+</Card>
 
-### 4rd Tuan  -  black
-when master decides
+<Card title="4rd Tuan  -  black" meta="when master decides" class="bg-stone-800 text-stone-100">
 
-###### Hand/fist strikes locks and pressures
-###### Free fighting
-friendly, of course
+###### Hand/fist strikes, locks and pressures
+###### Free fighting — friendly, of course
 
+</Card>
 
-### 5rd Tuan  -  black
-when master decides
+<Card title="5rd Tuan  -  black" meta="when master decides" class="bg-stone-800 text-stone-100">
 
 ###### Weapon Forms (Saber, Spear, Sword)
 
+</Card>
+
 </div>
-</section>

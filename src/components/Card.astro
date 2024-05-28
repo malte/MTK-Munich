@@ -1,21 +1,13 @@
 ---
-interface Props {
-  title: string;
-  body: string;
-  href: string;
-}
-
-const { href, title, body } = Astro.props;
+const { title, meta, class: className, ...props } = Astro.props;
 ---
 
-<li class="link-card text-white">
-  <a href={href}>
-    <h2>
+<div class:list={["p-4 rounded-2xl", className]}>
+  <div class="flex flex-row items-baseline gap-4">
+    <h3>
       {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
-  </a>
-</li>
+    </h3>
+    <p>{meta}</p>
+  </div>
+  <slot />
+</div>

@@ -23,7 +23,13 @@
                 rgb(var(--lazuli)) 60%);
     }
     body {
-        
+        ::backdrop {
+            backdrop-filter: blur(3px);
+        }
+    }
+    .global-padding {
+        text-align: left;
+        @apply mx-auto w-[80%] sm:w-1/2;
     }
     h1, h2, h3, h4 {
         @apply mb-4;
@@ -70,5 +76,19 @@
     .curved-headline {
         @apply absolute left-1/2 translate-x-[-50%] w-[700px] sm:w-[900px] md:w-[1200px] lg:w-[2000px];
     }
-
+        /* Tooltip container */
+        .tooltip {
+            @apply relative inline-block ;
+        }
+    
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            @apply text-center text-terracotta bg-white p-2 absolute z-10 border-2 border-terracotta rounded-full bottom-2 right-2; 
+      }
+    
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
 }
