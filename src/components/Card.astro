@@ -1,9 +1,12 @@
 ---
-const { title, meta, class: className, ...props } = Astro.props;
+const { title, meta, color, class: className, ...props } = Astro.props;
+const headerBgClass = `bg-${color}`;
 ---
 
-<div class:list={["p-4 rounded-2xl", className]}>
-  <div class="flex flex-row items-baseline gap-4">
+<div class:list={["rounded-2xl my-8", className]}>
+  <div
+    class:list={["px-4 pt-2 flex flex-row items-baseline gap-4", headerBgClass]}
+  >
     <h3>
       {title}
     </h3>

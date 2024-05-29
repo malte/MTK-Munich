@@ -26,9 +26,9 @@
         ::backdrop {
             backdrop-filter: blur(3px);
         }
-    }
-    .global-padding {
         text-align: left;
+    }
+    .container-slim {
         @apply mx-auto w-[80%] sm:w-1/2;
     }
     h1, h2, h3, h4 {
@@ -81,14 +81,17 @@
             @apply relative inline-block ;
         }
     
-        /* Tooltip text */
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            @apply text-center text-terracotta bg-white p-2 absolute z-10 border-2 border-terracotta rounded-full bottom-2 right-2; 
-      }
-    
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        @apply text-center text-terracotta bg-white p-2 absolute z-10 border-2 border-terracotta rounded-full bottom-2 right-2; 
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    .cards-grid {
+        @apply w-[80%] sm:w-full mx-auto overflow-visible grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4;
+    }
 }

@@ -5,10 +5,12 @@ import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 interface Props {
   title: string;
+  wrapperWidth: string;
 }
 import { getLangFromUrl } from "../i18n/utils";
+import type { arrayOutputType } from "astro/zod";
 const lang = getLangFromUrl(Astro.url);
-const { title } = Astro.props;
+const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,9 +30,7 @@ const { title } = Astro.props;
   <body>
     <div class="relative overflow-x-hidden min-h-[200vh]">
       <Nav />
-      <div class="global-padding py-12">
-        <slot />
-      </div>
+      <slot />
     </div>
     <script is:inline>
       const curvedHeadlines = document.querySelectorAll(".curved-headline");
@@ -42,9 +42,9 @@ const { title } = Astro.props;
           const offset = parseInt(ele.getAttribute("offset"));
           const eleTop = ele.getBoundingClientRect().top;
           const eleOffsetPercent =
-            direction == "R2L"
-              ? eleTop / 5 + offset
-              : 100 - eleTop / 5 + offset;
+            direction == "L2R"
+              ? -(eleTop / 10 + offset) % 80
+              : (eleTop / 10 + offset) % 80;
           textPath.setAttribute("startOffset", `${eleOffsetPercent}%`);
         });
       }
