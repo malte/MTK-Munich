@@ -22,8 +22,8 @@ export default {
 		    colors: {
 			'terracotta': 'rgba(253,78,78,1.0)',
 			'lazuli': 'rgba(78,78,198,1.0)',
-		}
-		}
+			}
+		},
 	},
   plugins: [
     require('@tailwindcss/typography'),

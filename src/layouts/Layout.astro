@@ -35,42 +35,24 @@ const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
     <script>
       const curvedHeadlines = document.querySelectorAll(".curved-headline");
       const windowWidth = window.innerWidth;
-      const breakpoints = { sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1536 };
-      const breakpoint = Object.keys(breakpoints).find(
-        (key) => windowWidth < breakpoints[key]
-      );
-      let offsetSelector = 0;
-      switch (breakpoint) {
-        case "sm":
-          offsetSelector = 1;
-          break;
-        case "md":
-          offsetSelector = 2;
-          break;
-        case "lg":
-          offsetSelector = 3;
-          break;
-        case "xl":
-          offsetSelector = 4;
-          break;
-        case "xxl":
-          offsetSelector = 5;
-          break;
-        default:
-          offsetSelector = 0;
-          break;
-      }
-      console.log(breakpoint);
+      let offsetSelector = // get value from css variable at root
+        parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--screenSizeSelector"
+          )
+        ) || 0;
+      console.log(offsetSelector);
       function updateCurvedHeadlines() {
         curvedHeadlines.forEach((ele) => {
           const textPath = ele.querySelector("textPath");
           const direction = ele.getAttribute("direction");
+
           const offset = parseInt(ele.getAttribute("offset"));
           const eleTop = ele.getBoundingClientRect().top;
           const eleOffsetPercent =
             direction == "L2R"
-              ? -(eleTop / 10 + offset) % 80
-              : (eleTop / 10 + offset) % 80;
+              ? -(eleTop / 10 + offset) % 100
+              : (eleTop / 10 + offset) % 100;
           textPath.setAttribute("startOffset", `${eleOffsetPercent}%`);
         });
       }
