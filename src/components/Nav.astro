@@ -46,8 +46,11 @@ const navLinks = siteConfig.headerNavLinks || [];
 <style>
   @media (max-width: 767px) {
     .menu {
-      @apply flex-col gap-1 absolute -top-2.5 -left-2.5 max-w-64 px-3 pt-16 pb-10 z-20 border border-dashed invisible opacity-0;
+      @apply flex-col gap-1 absolute -top-2.5 -left-2.5 max-w-64 px-3 pt-16 pb-10 z-20 border border-dashed invisible opacity-0 bg-stone-200 shadow-xl;
       width: calc(100% + 1.25rem);
+    }
+    .menu .menu-items li {
+      @apply text-2xl;
     }
     .menu.is-visible {
       @apply visible opacity-100;
