@@ -61,20 +61,21 @@
     }
     h6 { @apply font-[900]}
     a { @apply text-lazuli}
-    .text-gradient {
-        background-image: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 400%;
-        background-position: 0%;
-    }
-    p {
-        @apply max-w-[60ch];
-    }
-    blockquote {
-        @apply text-lg md:text-xl lg:text-2xl p-8;
-        font-variation-settings: "wdth" 115;
-        font-weight: 100;
+    .markdown {
+        p {
+            @apply max-w-[60ch] leading-6 mb-4;
+        }
+        blockquote {
+            p {
+                @apply text-lg md:text-xl lg:text-2xl  py-4 sm:py-8 sm:px-8 leading-8;
+            }
+        }
+        ul  {
+        @apply my-4;
+            li {
+                @apply list-disc pl-2 ml-6;
+            }
+        }
     }
 }
 @layer components {
@@ -95,18 +96,26 @@
         @apply absolute left-1/2 translate-x-[-50%];
         /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */
         width: 100vw;
+        h1 {
+            font-size: calc(6rem - 2.5vw);         
+        }
         h2 {
             font-size: calc(6rem - 3vw);         
         }
         h3 {
-            font-size: calc(4rem - 3vw);         
+            font-size: calc(4.5rem - 2.5vw);         
+        }
+        h4 {
+            font-size: calc(6rem - 3vw);         
         }
     }
         /* Tooltip container */
         .tooltip {
             @apply relative inline-block ;
         }
-    
+        .inverted-header > h3 ,  .inverted-header > h3 + p {
+            @apply text-stone-100;
+        }
     /* Tooltip text */
     .tooltip .tooltiptext {
         visibility: hidden;

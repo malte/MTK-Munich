@@ -25,7 +25,7 @@ const curves = {
   wave: "M 100,300 a 401,401 0 0,1 400,0  a 401,401 0 0,0 400,0",
 };
 const curve = curves[type];
-const spacing = tag == "h2" ? "h-[120px] md:h-[300px]" : "h-[120px]";
+const spacing = tag == "h2" || "h1" ? "h-[120px] md:h-[300px]" : "h-[120px]";
 ---
 
 <div class:list={["relative", spacing]}>

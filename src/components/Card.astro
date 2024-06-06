@@ -1,16 +1,28 @@
 ---
 const { title, meta, color, class: className, ...props } = Astro.props;
 const headerBgClass = `bg-${color}`;
+const borderColor = `border-${color}`;
 ---
 
-<div class:list={["rounded-2xl my-8", className]}>
+<div
+  class:list={[
+    "group rounded-lg my-2 border-4 overvlow-hidden",
+    borderColor,
+    className,
+  ]}
+>
   <div
-    class:list={["px-4 pt-2 flex flex-row items-baseline gap-4", headerBgClass]}
+    class:list={[
+      "px-4 min-h-20 pt-2 flex flex-row items-baseline gap-4",
+      headerBgClass,
+    ]}
   >
     <h3>
       {title}
     </h3>
-    <p>{meta}</p>
+    <p class="invisible group-hover:visible">{meta}</p>
   </div>
-  <slot />
+  <div class="p-4">
+    <slot />
+  </div>
 </div>

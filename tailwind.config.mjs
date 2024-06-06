@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	safelist: [
+		{pattern: /bg-(yellow-300|amber-400|green-500|blue-500|amber-900|stone-800)/},
+		{pattern: /border-(yellow-300|amber-400|green-500|blue-500|amber-900|stone-800)/},
+		],  	
 	theme: {
 		fontFamily: {
 			'sans': ['"DM Sans"','ui-sans-serif', 'system-ui', ],
@@ -22,10 +26,10 @@ export default {
 		    colors: {
 			'terracotta': 'rgba(253,78,78,1.0)',
 			'lazuli': 'rgba(78,78,198,1.0)',
-			}
+			},
 		},
 	},
-  plugins: [
+ 	plugins: [
     require('@tailwindcss/typography'),
     // ...
   ],
