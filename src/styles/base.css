@@ -22,6 +22,7 @@
                 rgb(var(--terracotta)),
                 rgb(var(--raspberry)) 30%,
                 rgb(var(--lazuli)) 60%);
+        --screenWidth: 100vw;
         --screenSizeSelector: 0;
         @screen sm {
             --screenSizeSelector: 1;
@@ -93,7 +94,13 @@
     .curved-headline {
         @apply absolute left-1/2 translate-x-[-50%];
         /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */
-        width: 110vw;
+        width: 100vw;
+        h2 {
+            font-size: calc(6rem - 3vw);         
+        }
+        h3 {
+            font-size: calc(4rem - 3vw);         
+        }
     }
         /* Tooltip container */
         .tooltip {
