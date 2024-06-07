@@ -13,7 +13,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   class:list={[
     className,
     "hover:border-b-2 hover:border-lazuli",
-    { "md:border-t-2 border-lazuli": isActive },
+    { "md:border-t-2 border-terracotta text-terracotta": isActive },
   ]}
   href={href}
   {...props}

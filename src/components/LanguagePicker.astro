@@ -9,7 +9,12 @@ const thislang = getLangFromUrl(Astro.url);
     Object.entries(languages).map(([lang]) => (
       <li class="py-1">
         <a
-          class:list={["uppercase hover:border-b-2 border-purple"]}
+          class:list={[
+            "uppercase hover:border-b-2 border-lazuli",
+            lang === thislang
+              ? "border-t-2 border-terracotta text-terracotta"
+              : "font-normal",
+          ]}
           href={`/${lang}/`}
         >
           {lang}

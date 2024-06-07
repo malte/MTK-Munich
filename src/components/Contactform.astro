@@ -2,21 +2,83 @@
 const { title, meta, color, class: className, ...props } = Astro.props;
 ---
 
-<div>
-  <form action="https://submit-form.com/skLLruCyj">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" placeholder="Name" required="" />
-    <label for="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Email"
-      required=""
-    />
-    <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Message" required=""
-    ></textarea>
-    <button type="submit">Send</button>
+<div class="p-12 bg-stone-50 flex flex-col mb-24">
+  <form class="" x-data="contactForm()" @submit.prevent="submit">
+    <label>
+      <span>Whats your name*?</span>
+      <input name="name" x-model="data.name" required="true" />
+    </label>
+    <label>
+      <span>and email*?</span>
+      <input name="email" x-model="data.email" required="true" />
+    </label>
+    <label>
+      <span>What's your message?</span>
+      <textarea name="message" x-model="data.message"></textarea>
+    </label>
+
+    <checkbox name="privacycheck" x-model="data.privacy"
+      >i have read and accepted the privay terms</checkbox
+    >
+    <span>* necessary fields</span>
+
+    <button type="submit" x-text="buttonText" :disabled="loading">
+      Submit
+    </button>
   </form>
+
+  <script is:inline>
+    const FORMSPARK_ACTION_URL = "https://submit-form.com/skLLruCyj";
+
+    function contactForm() {
+      return {
+        data: {
+          name: "",
+          email: "",
+          message: "",
+        },
+        buttonText: "Submit",
+        loading: false,
+        submit() {
+          this.buttonText = "Submitting...";
+          this.loading = true;
+          fetch(FORMSPARK_ACTION_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(this.data),
+          })
+            .then(() => {
+              alert("Form submitted");
+            })
+            .catch(() => {
+              alert("Something went wrong");
+            })
+            .finally(() => {
+              this.data.message = "";
+              this.data.email = "";
+              this.buttonText = "Submit";
+              this.loading = false;
+            });
+        },
+      };
+    }
+  </script>
+  <style>
+    form {
+      @apply flex flex-col gap-4;
+    }
+    label {
+      @apply flex flex-col;
+      input,
+      textarea {
+        @apply p-2 border border-stone-300 rounded-sm;
+      }
+    }
+    button {
+      @apply bg-lazuli text-white py-2 px-4 rounded-lg hover:bg-terracotta;
+    }
+  </style>
 </div>
