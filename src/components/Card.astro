@@ -13,14 +13,14 @@ const borderColor = `border-${color}`;
 >
   <div
     class:list={[
-      "px-4 min-h-20 pt-2 flex flex-row items-baseline gap-4",
+      "px-4 min-h-20 pt-2 flex flex-col sm:flex-row items-baseline sm:gap-4",
       headerBgClass,
     ]}
   >
     <h3>
       {title}
     </h3>
-    <p class="invisible group-hover:visible">{meta}</p>
+    <p class="sm:invisible group-hover:visible">{meta}</p>
   </div>
   <div class="p-4">
     <slot />

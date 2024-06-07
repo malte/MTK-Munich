@@ -1,0 +1,19 @@
+---
+const { title, meta, color, class: className, ...props } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<div class="flex flex-row sm:flex-col md:fixed p-2 sm:p-4 mt-12">
+  <Image
+    src="/img/TCC_MTK_MUC_red.png"
+    width="180"
+    height="180"
+    alt="Tai Chi Chuan Ma Tsun Kuen Munich Logo"
+  />
+  <Image
+    src="/img/MTK_logo_light.png"
+    width="180"
+    height="180"
+    alt="Ma Tsun Kuen Logo"
+  />
+</div>

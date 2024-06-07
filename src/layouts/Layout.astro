@@ -7,6 +7,7 @@ interface Props {
   title: string;
   wrapperWidth: string;
 }
+import Logos from "../components/Logos.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import type { arrayOutputType } from "astro/zod";
 const lang = getLangFromUrl(Astro.url);
@@ -29,6 +30,7 @@ const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
   </head>
   <body>
     <div class="relative overflow-x-hidden min-h-[200vh]">
+      <Logos />
       <Nav />
       <slot />
     </div>
