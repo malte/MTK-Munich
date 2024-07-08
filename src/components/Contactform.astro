@@ -1,31 +1,37 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const { title, meta, color, class: className, ...props } = Astro.props;
 ---
 
-<div class="p-12 bg-stone-50 flex flex-col mb-24">
+<div
+  id="contact"
+  class:list={[className, "p-12 bg-stone-50 flex flex-col mb-24 rounded-lg"]}
+>
+  <h2>{t("contact.greeting")}</h2>
   <form class="" x-data="contactForm()" @submit.prevent="submit">
     <label>
-      <span>Whats your name*?</span>
+      <span>{t("contact.name")}</span>
       <input name="name" x-model="data.name" required="true" />
     </label>
     <label>
-      <span>and email*?</span>
+      <span>{t("contact.email")}</span>
       <input name="email" x-model="data.email" required="true" />
     </label>
     <label>
-      <span
-        >Do you have experience with Tai Chi Chuan or another martial art?:</span
-      >
+      <span>{t("contact.question")}</span>
       <textarea name="message" x-model="data.message"></textarea>
     </label>
 
     <checkbox name="privacycheck" x-model="data.privacy"
-      >i have read and accepted the privay terms</checkbox
+      >{t("contact.privacy")}</checkbox
     >
-    <span>* necessary fields</span>
+    <span>{t("contact.necessary")}</span>
 
     <button type="submit" x-text="buttonText" :disabled="loading">
-      Submit
+      {t("contact.send")}
     </button>
   </form>
 
@@ -39,10 +45,10 @@ const { title, meta, color, class: className, ...props } = Astro.props;
           email: "",
           message: "",
         },
-        buttonText: "Submit",
+        buttonText: "Send",
         loading: false,
         submit() {
-          this.buttonText = "Submitting...";
+          this.buttonText = "Sending...";
           this.loading = true;
           fetch(FORMSPARK_ACTION_URL, {
             method: "POST",
@@ -53,7 +59,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
             body: JSON.stringify(this.data),
           })
             .then(() => {
-              alert("Form submitted");
+              alert("Form sent");
             })
             .catch(() => {
               alert("Something went wrong");
@@ -61,7 +67,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
             .finally(() => {
               this.data.message = "";
               this.data.email = "";
-              this.buttonText = "Submit";
+              this.buttonText = "Send";
               this.loading = false;
             });
         },
