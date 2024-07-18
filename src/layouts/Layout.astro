@@ -4,21 +4,26 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 interface Props {
-  title: string;
-  wrapperWidth: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    contact: boolean;
+  };
 }
 import Logos from "../components/Logos.astro";
 import { getLangFromUrl } from "../i18n/utils";
+import Contactform from "../components/Contactform.astro";
 import type { arrayOutputType } from "astro/zod";
 const lang = getLangFromUrl(Astro.url);
-const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
+const { frontmatter = { title: "", description: "", contact: true } } =
+  Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang} class="bg-stone-100 text-stone-900">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={frontmatter.description} />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1"
@@ -26,13 +31,16 @@ const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{frontmatter.title}</title>
   </head>
   <body>
     <div class="relative overflow-x-hidden min-h-[200vh]">
       <Logos />
       <Nav />
-      <slot />
+      <div class="container-slim markdown">
+        <slot />
+        {frontmatter.contact ?? <Contactform class="mt-24" />}
+      </div>
       <Footer />
     </div>
     <script>
