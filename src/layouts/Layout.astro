@@ -1,6 +1,6 @@
 ---
 import "../styles/base.css";
-// import Footer from '../components/Footer.astro';
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 interface Props {
@@ -33,6 +33,7 @@ const { title, wrapperWidth = "global-padding py-12" } = Astro.props;
       <Logos />
       <Nav />
       <slot />
+      <Footer />
     </div>
     <script>
       const curvedHeadlines = document.querySelectorAll(".curved-headline");

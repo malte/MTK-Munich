@@ -53,12 +53,8 @@ const siteConfig: SiteConfig = {
     ],
     footerNavLinks: [
         {
-            text: 'nav.about',
-            href: '/about'
-        },
-        {
-            text: 'Contact',
-            href: '/contact'
+            text: 'nav.imprint',
+            href: '/impressum'
         },
     ]
 };
