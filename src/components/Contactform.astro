@@ -24,23 +24,25 @@ const { title, meta, color, class: className, ...props } = Astro.props;
       <span>{t("contact.question")}</span>
       <textarea name="message" x-model="data.message"></textarea>
     </label>
-    <div class="flex-flex-row items-baseline">
-      <input
-        type="checkbox"
-        required="true"
-        name="privacycheck"
-        x-model="data.privacy"
-        class="!inline-block w-4"
-      />
-      <span>{t("contact.privacy")}</span>
-      <span><a href="./impressum" class="hover:underline">link</a></span>
-    </div>
-  </form>
-  <div class="text-right mb-2">{t("contact.necessary")}</div>
+    <label>
+      <div class="flex-flex-row items-baseline">
+        <input
+          type="checkbox"
+          required="true"
+          name="privacycheck"
+          x-model="data.privacy"
+          class="!inline-block w-4"
+        />
+        <span>{t("contact.privacy")}</span>
+        <span><a href="./impressum" class="hover:underline">link</a></span>
+      </div>
+    </label>
+    <div class="text-right mb-2">{t("contact.necessary")}</div>
 
-  <button type="submit" x-text="buttonText" :disabled="loading">
-    {t("contact.send")}
-  </button>
+    <button type="submit" x-text="buttonText" :disabled="loading">
+      {t("contact.send")}
+    </button>
+  </form>
 </div>
 
 <script is:inline>
@@ -52,6 +54,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
         name: "",
         email: "",
         message: "",
+        privacy: "",
       },
       buttonText: "Send",
       loading: false,
@@ -73,6 +76,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
             alert("Something went wrong");
           })
           .finally(() => {
+            this.data.privacy = "";
             this.data.message = "";
             this.data.email = "";
             this.buttonText = "Send";
