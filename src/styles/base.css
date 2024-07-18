@@ -47,7 +47,7 @@
         text-align: left;
     }
     .container-slim {
-        @apply mx-auto w-[80%] sm:w-1/2;
+        @apply mx-auto w-[80%] lg:w-1/2;
     }
     h1, h2, h3 {
         @apply mb-4;
