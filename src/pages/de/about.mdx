@@ -3,8 +3,13 @@ layout: "../../layouts/slimLayout.astro"
 title: "About"
 ---
 import CurvedHeadline from '../../components/CurvedHeadline.astro';
+import { Image } from 'astro:assets';
+import portrait from '../../img/DSCF0957_900.jpg';
+
+<Image src={portrait} width="600" alt="a portrait of Malte" />
 
 <CurvedHeadline tag="h1" type="slope" direction="L2R" offset="-35" class="top-[30px] sm:top-[100px]  fill-terracotta">Über</CurvedHeadline>
+
 
 ### mich
 
