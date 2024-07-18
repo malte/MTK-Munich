@@ -1,9 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Botpoison from "@botpoison/browser";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { title, meta, color, class: className, ...props } = Astro.props;
+const botpoison = new Botpoison({
+  publicKey: "pk_ed2df257-1669-441a-a64e-df1438b79b26",
+});
 ---
 
 <div
