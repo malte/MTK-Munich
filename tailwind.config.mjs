@@ -7,10 +7,9 @@ export default {
 		],  	
 	theme: {
 		fontFamily: {
-			'sans': ['"DM Sans"','ui-sans-serif', 'system-ui', ],
+			'sans': ['DM Sans','ui-sans-serif', 'system-ui', ],
 			'serif': ['ui-serif', 'Georgia', ],
 			'mono': ['ui-monospace', 'SFMono-Regular', ],
-			'display': ['Oswald', ],
 		},
 		fontSize: {
 			'sm': ['0.8rem', '1rem'],
