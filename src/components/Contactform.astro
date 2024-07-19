@@ -1,13 +1,9 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import Botpoison from "@botpoison/browser";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { title, meta, color, class: className, ...props } = Astro.props;
-const botpoison = new Botpoison({
-  publicKey: "pk_ed2df257-1669-441a-a64e-df1438b79b26",
-});
 ---
 
 <div
@@ -28,82 +24,69 @@ const botpoison = new Botpoison({
       <span>{t("contact.question")}</span>
       <textarea name="message" x-model="data.message"></textarea>
     </label>
-    <label>
-      <div class="flex-flex-row items-baseline">
-        <input
-          type="checkbox"
-          required="true"
-          name="privacycheck"
-          x-model="data.privacy"
-          class="!inline-block w-4"
-        />
-        <span>{t("contact.privacy")}</span>
-        <span
-          ><a href=`/${lang}/impressum` class="hover:underline">link</a></span
-        >
-      </div>
-    </label>
-    <div class="text-right mb-2">{t("contact.necessary")}</div>
+
+    <checkbox name="privacycheck" x-model="data.privacy"
+      >{t("contact.privacy")}</checkbox
+    >
+    <span>{t("contact.necessary")}</span>
 
     <button type="submit" x-text="buttonText" :disabled="loading">
       {t("contact.send")}
     </button>
   </form>
-</div>
 
-<script is:inline>
-  const FORMSPARK_ACTION_URL = "https://submit-form.com/MZNuUd1jS";
+  <script is:inline>
+    const FORMSPARK_ACTION_URL = "https://submit-form.com/skLLruCyj";
 
-  function contactForm() {
-    return {
-      data: {
-        name: "",
-        email: "",
-        message: "",
-        privacy: "",
-      },
-      buttonText: "Send",
-      loading: false,
-      submit() {
-        this.buttonText = "Sending...";
-        this.loading = true;
-        fetch(FORMSPARK_ACTION_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(this.data),
-        })
-          .then(() => {
-            alert("Form sent");
+    function contactForm() {
+      return {
+        data: {
+          name: "",
+          email: "",
+          message: "",
+        },
+        buttonText: "Send",
+        loading: false,
+        submit() {
+          this.buttonText = "Sending...";
+          this.loading = true;
+          fetch(FORMSPARK_ACTION_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(this.data),
           })
-          .catch(() => {
-            alert("Something went wrong");
-          })
-          .finally(() => {
-            this.data.privacy = "";
-            this.data.message = "";
-            this.data.email = "";
-            this.buttonText = "Send";
-            this.loading = false;
-          });
-      },
-    };
-  }
-</script>
-<style>
-  form {
-    @apply flex flex-col gap-4;
-  }
-  label {
-    @apply flex flex-col;
-    input,
-    textarea {
-      @apply p-2 border border-stone-300 rounded-sm;
+            .then(() => {
+              alert("Form sent");
+            })
+            .catch(() => {
+              alert("Something went wrong");
+            })
+            .finally(() => {
+              this.data.message = "";
+              this.data.email = "";
+              this.buttonText = "Sendç";
+              this.loading = false;
+            });
+        },
+      };
     }
-  }
-  button {
-    @apply bg-lazuli text-white py-2 px-4 rounded-lg hover:bg-terracotta;
-  }
-</style>
+  </script>
+  <style>
+    form {
+      @apply flex flex-col gap-4;
+    }
+    label {
+      @apply flex flex-col;
+      input,
+      textarea {
+        @apply p-2 border border-stone-300 rounded-sm;
+      }
+    }
+    button {
+      @apply bg-lazuli text-white py-2 px-4 rounded-lg hover:bg-terracotta;
+    }
+  </style>
+</div>
