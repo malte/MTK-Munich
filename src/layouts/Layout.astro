@@ -30,7 +30,7 @@ const { frontmatter = { title: "", description: "", contact: true } } =
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={frontmatter.description} />
     <title>{frontmatter.title}</title>
   </head>
   <body>
