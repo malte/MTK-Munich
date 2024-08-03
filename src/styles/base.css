@@ -92,6 +92,9 @@
             @apply mx-auto w-[80%] sm:w-1/2;
         }      
     }
+    .inline-link {
+        @apply bg-lazuli text-white rounded-sm px-2;
+    }
     .curved-headline {
         @apply absolute left-1/2 translate-x-[-50%];
         /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */

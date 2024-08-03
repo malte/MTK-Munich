@@ -2,10 +2,12 @@
 layout: "../../layouts/Layout.astro"
 title: "About"
 description: "About the teachers at Ma Tsun Kuen Tai Chi Chuan Munich"
+contact: false
 ---
 import CurvedHeadline from '../../components/CurvedHeadline.astro';
 import { Image } from 'astro:assets';
 import mapImage from '../../img/portrait.jpg';
+import Button from '../../components/Button.astro';
 
 <Image src={mapImage} width="600" class="mt-16 z-[-10] 2xl:mt-0 2xl:absolute top-16 sm:right-16" alt="a portrait of Malte" />
 <CurvedHeadline tag="h1" type="slope" direction="R2L" offset="10" class="top-[30px] sm:top-[100px]  fill-terracotta">about</CurvedHeadline>
@@ -20,4 +22,4 @@ is the lineage holder of Ma Tsun Kuen Tai Chi Chuan and teaches students mostly 
 #### Ma Tsun Kuen
 , a former chinese province govourner, who learned Tai Chi Chuan from a captive "strange man" — a taoist. Later Ma Tsun Kuen exiled to Argentina, where Fernando became his student and later his successor.
 You can read an interview with Fernando about his time with Ma Tsun Kuen 
-<a href="http://matsunkuen.com/interview-with-ronnie-robbinson/" target="_blank">-> here</a>.
+<Button  href="http://matsunkuen.com/interview-with-ronnie-robbinson/" target="_blank">-> here</Button> .
