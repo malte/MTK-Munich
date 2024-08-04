@@ -1,1 +1,7 @@
-test
+---
+import Carousel from "../../components/Carousel.astro";
+
+const logos = ["Logo 1", "Logo 2", "Logo 3", "Logo 4", "Logo 5", "Logo 6"];
+---
+
+<Carousel items={logos} speed={5000} itemsToShow={4} />

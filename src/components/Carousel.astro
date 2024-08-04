@@ -1,0 +1,113 @@
+---
+// Carousel.astro
+interface CarouselProps {
+  items: string[];
+  speed?: number;
+  itemsToShow?: number;
+}
+
+const { items, speed = 100, itemsToShow = 12 } = Astro.props as CarouselProps;
+const extendedItems = [...items, ...items.slice(0, itemsToShow)];
+---
+
+<div
+  class="carousel-container"
+  data-speed={speed}
+  data-items-to-show={itemsToShow}
+>
+  <div class="carousel-track">
+    {
+      extendedItems.map((item, index) => (
+        <div key={index} class="carousel-item">
+          {index}
+          {item}
+        </div>
+      ))
+    }
+  </div>
+</div>
+<style>
+  .carousel-container {
+    --transition-time: 800ms;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-direction: row;
+    transition: transform var(--transition-time) ease-in-out;
+  }
+
+  .carousel-item {
+    @apply flex-shrink-0;
+    padding: 4px;
+    text-align: center;
+    width: calc(100% / var(--items-to-show));
+  }
+</style>
+
+<script>
+  export class Carousel {
+    container: HTMLElement;
+    track: HTMLElement;
+    items: HTMLElement[];
+    speed: number;
+    itemsToShow: number;
+    currentIndex: number;
+
+    constructor(element) {
+      this.container = element;
+      this.track = element.querySelector(".carousel-track");
+      this.items = Array.from(this.track.querySelectorAll(".carousel-item"));
+      this.speed = parseInt(element.dataset.speed, 10);
+      this.itemsToShow = parseInt(element.dataset.itemsToShow, 10);
+      this.currentIndex = 0;
+
+      this.init();
+    }
+
+    init() {
+      this.setItemsToShow();
+      this.startAutoScroll();
+      window.addEventListener("resize", () => this.setItemsToShow());
+    }
+
+    setItemsToShow() {
+      this.container.style.setProperty(
+        "--items-to-show",
+        this.itemsToShow.toString()
+      );
+    }
+
+    startAutoScroll() {
+      setInterval(() => this.scroll(), this.speed);
+    }
+
+    scroll() {
+      //   this.currentIndex = (this.currentIndex + 1) % (this.items.length / 2);
+
+      this.currentIndex++;
+      const offset = this.currentIndex * (100 / this.itemsToShow);
+      console.log(this.currentIndex, offset, this.itemsToShow);
+      this.track.style.transform = `translateX(-${offset}%)`;
+
+      if (this.currentIndex > this.items.length / 2) {
+        setTimeout(() => {
+          this.currentIndex = 0;
+          this.track.style.transition = "none";
+          this.track.style.transform = "translateX(0)";
+          setTimeout(() => {
+            this.track.style.transition =
+              "transform var(--transition-time) ease-in-out";
+          }, 50);
+        }, this.speed);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel-container");
+    carousels.forEach((carousel) => new Carousel(carousel));
+  });
+</script>
