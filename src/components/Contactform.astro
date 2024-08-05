@@ -8,11 +8,14 @@ const { title, meta, color, class: className, ...props } = Astro.props;
 
 <div
   id="contact"
-  class:list={[className, "p-12 bg-stone-50 flex flex-col mb-24 rounded-lg"]}
+  class:list={[
+    className,
+    "p-4 lg:p-12 bg-stone-50 flex flex-col mb-24 rounded-lg",
+  ]}
 >
   <div class="flex flex-col sm:flex-row mb-8 gap-4">
     <img
-      class="w-1/2"
+      class="sm:w-1/2 h-auto object-contain"
       src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExczE4MjU0NHJnMmp3NWQ3aTU0MmZjb3R3ZWNqYTFmNjJ2bHZweXQ1ayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jXtdnZlhK7Fbfo4Ioc/200.webp"
       alt="Kung Fu Panda finds inner peace"
     />
