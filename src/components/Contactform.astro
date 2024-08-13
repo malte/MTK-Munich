@@ -34,10 +34,15 @@ const { title, meta, color, class: className, ...props } = Astro.props;
       <span>{t("contact.question")}</span>
       <textarea name="message" x-model="data.message"></textarea>
     </label>
-
-    <checkbox name="privacycheck" x-model="data.privacy"
-      >{t("contact.privacy")}</checkbox
-    >
+    <label>
+      <input
+        type="checkbox"
+        name="privacycheck"
+        x-model="data.privacy"
+        required="true"
+      />
+      {t("contact.privacy")}
+    </label>
     <span>{t("contact.necessary")}</span>
 
     <button type="submit" x-text="buttonText" :disabled="loading">
@@ -77,7 +82,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
             .finally(() => {
               this.data.message = "";
               this.data.email = "";
-              this.buttonText = "Sendç";
+              this.buttonText = "Send";
               this.loading = false;
             });
         },
@@ -94,6 +99,9 @@ const { title, meta, color, class: className, ...props } = Astro.props;
       textarea {
         @apply p-2 border border-stone-300 rounded-sm;
       }
+    }
+    label:has(input[type="checkbox"]) {
+      @apply flex flex-row gap-2;
     }
     button {
       @apply bg-lazuli text-white py-2 px-4 rounded-lg hover:bg-terracotta;
