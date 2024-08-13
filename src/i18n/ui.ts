@@ -8,7 +8,7 @@ export const defaultLang = 'en';
 export const ui = {
   en: {
     'nav.home': 'Tai Chi Chuan Munich',
-    'nav.curriculum': 'Ma Tsun Kuen System',
+    'nav.matsunkuen': 'Ma Tsun Kuen System',
     'nav.taiChi': 'Tai Chi',
     'nav.about': 'About me',
     'nav.imprint': 'Imprint / Privacy',
@@ -23,7 +23,7 @@ export const ui = {
   },
   de: {
     'nav.home': 'Tai Chi Chuan München',
-    'nav.curriculum': 'Ma Tsun Kuen System',
+    'nav.matsunkuen': 'Ma Tsun Kuen System',
     'nav.taiChi': 'Tai Chi',
     'nav.about': 'Über mich',
     'nav.imprint': 'Impressum / Datenschutz',

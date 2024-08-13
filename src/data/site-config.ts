@@ -39,8 +39,8 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'nav.curriculum',
-            href: '/curriculum'
+            text: 'nav.matsunkuen',
+            href: '/matsunkuen'
         },
         {
             text: 'nav.taiChi',
