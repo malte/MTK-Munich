@@ -23,11 +23,11 @@ const navLinks = siteConfig.headerNavLinks || [];
         >
           <span class="menu-toggle-icon w-6 h-px relative" />
         </button>
-        <ul id="menu-items" class="menu flex gap-6">
+        <ul id="menu-items" class="menu flex gap-6 lg:gap-12">
           {navLinks.map((link) => (
             <li class="py-1">
               <NavLink
-                class="text-2xl md:text-base"
+                class="text-2xl md:text-lg lg:text-xl xl:text-2xl"
                 href={`/${lang}${link.href}`}
               >
                 {t(link.text)}
