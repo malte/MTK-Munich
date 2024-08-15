@@ -17,9 +17,9 @@ export default {
 			'lg': ['1.25rem', '1.5rem'],
 			'xl': ['1.563rem', '1.75rem'],
 			'2xl': ['1.935rem', '2rem'],
-			'3xl': ['2.441rem', '3rem'],
-			'4xl': ['3.052rem', '3.5rem'],
-			'5xl': ['3.815rem', '4rem'],
+			'3xl': ['2.441rem', '2.5rem'],
+			'4xl': ['3.052rem', '3rem'],
+			'5xl': ['3.815rem', '3.5rem'],
 		},
 		extend: {
 		    colors: {
