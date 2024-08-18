@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   //  outDir: './MTK-Munich-dist',
   //  output: 'static',
-  site: 'https://xn--taichi-mnchen-3ob.art/',
+  site: 'https://taichi-munich.art',
   integrations: [tailwind({
     nesting: true
   }), mdx(), alpinejs(), sitemap()]
