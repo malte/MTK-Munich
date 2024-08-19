@@ -32,7 +32,8 @@ const { title, meta, color, class: className, ...props } = Astro.props;
     </label>
     <label>
       <span>{t("contact.question")}</span>
-      <textarea name="message" x-model="data.message"></textarea>
+      <textarea name="message" x-model="data.message" required="true"
+      ></textarea>
     </label>
     <label>
       <input
