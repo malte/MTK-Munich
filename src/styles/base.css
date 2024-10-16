@@ -79,6 +79,22 @@
     }
 }
 @layer components {
+    .cards {
+        @apply flex flex-col 2xl:flex-row justify-between gap-12;
+    }
+    .card {
+        @apply flex-1;
+        h3 {
+            @apply text-base;
+        }
+        p {
+            @apply text-lg leading-snug;
+        }
+        button {
+            @apply mt-4 text-base;
+        }
+        @apply flex flex-col;
+    }
     .slide {
         padding:0 1rem;            
         @apply relative grid;
@@ -96,7 +112,7 @@
         @apply bg-lazuli text-white rounded-sm px-2;
     }
     .curved-headline {
-        @apply absolute left-1/2 translate-x-[-50%];
+        @apply absolute left-1/2 translate-x-[-50%] opacity-90;
         /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */
         width: 100vw;
         h1 {

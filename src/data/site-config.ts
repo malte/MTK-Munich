@@ -39,12 +39,12 @@ const siteConfig: SiteConfig = {
             href: '/'
         },
         {
-            text: 'nav.matsunkuen',
-            href: '/matsunkuen'
-        },
-        {
             text: 'nav.taiChi',
             href: '/taichi'
+        },
+        {
+            text: 'nav.matsunkuen',
+            href: '/matsunkuen'
         },
         {
             text: 'nav.about',
