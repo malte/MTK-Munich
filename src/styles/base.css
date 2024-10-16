@@ -85,9 +85,12 @@
     .card {
         @apply flex-1;
         h3 {
-            @apply text-base;
+            @apply text-2xl;
         }
-        p {
+        ul {
+            @apply list-disc -mt-4 p-0;
+        }
+        p, li {
             @apply text-lg leading-snug;
         }
         button {
