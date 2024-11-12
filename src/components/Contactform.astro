@@ -24,22 +24,22 @@ const { title, meta, color, class: className, ...props } = Astro.props;
   <form class="" x-data="contactForm()" @submit.prevent="submit">
     <label>
       <span>{t("contact.name")}</span>
-      <input name="name" x-model="data.name" required="true" />
+      <input name="name" x-model="formData.name" required="true" />
     </label>
     <label>
       <span>{t("contact.email")}</span>
-      <input name="email" x-model="data.email" required="true" />
+      <input name="email" x-model="formData.email" required="true" />
     </label>
     <label>
       <span>{t("contact.question")}</span>
-      <textarea name="message" x-model="data.message" required="true"
+      <textarea name="message" x-model="formData.message" required="true"
       ></textarea>
     </label>
     <label>
       <input
         type="checkbox"
         name="privacycheck"
-        x-model="data.privacy"
+        x-model="formData.privacy"
         required="true"
       />
       {t("contact.privacy")}
@@ -53,39 +53,50 @@ const { title, meta, color, class: className, ...props } = Astro.props;
 
   <script is:inline>
     const FORMSPARK_ACTION_URL = "https://submit-form.com/MZNuUd1jS";
-
     function contactForm() {
       return {
-        data: {
+        formData: {
           name: "",
           email: "",
           message: "",
+          privacy: false
         },
         buttonText: "Send",
         loading: false,
         submit() {
-          this.buttonText = "Sending...";
-          this.loading = true;
-          fetch(FORMSPARK_ACTION_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(this.data),
-          })
-            .then(() => {
-              alert("Form sent");
+          const botpoison = new Botpoison({
+            publicKey: "pk_ed2df257-1669-441a-a64e-df1438b79b26",
+          });
+          botpoison.challenge().then((result) => {
+            this.buttonText = "Sending...";
+            this.loading = true;
+            
+            fetch(FORMSPARK_ACTION_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({
+                ...this.formData,
+                _botpoison: result.solution
+              }),
             })
-            .catch(() => {
-              alert("Something went wrong");
-            })
-            .finally(() => {
-              this.data.message = "";
-              this.data.email = "";
-              this.buttonText = "Send";
-              this.loading = false;
-            });
+              .then(() => {
+                alert("Form sent");
+              })
+              .catch(() => {
+                alert("Something went wrong");
+              })
+              .finally(() => {
+                this.formData.message = "";
+                this.formData.email = "";
+                this.formData.name = "";
+                this.formData.privacy = false;
+                this.buttonText = "Send";
+                this.loading = false;
+              });
+          });
         },
       };
     }

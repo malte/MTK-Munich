@@ -14,6 +14,16 @@
         font-style: italic;
         src: url('/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format("truetype");
     }
+    @font-face {
+        font-family: "Rethink Sans";
+        src: url('/fonts/RethinkSans-VariableFont_wght.ttf') format("truetype");
+    }
+
+    @font-face {
+        font-family: "Rethink Sans";
+        font-style: italic;
+        src: url('/fonts/RethinkSans-Italic-VariableFont_wght.ttf') format("truetype");
+    }
     :root {
         --terracotta: 253, 78, 78;
         --lazuli: 78, 78, 198;

@@ -7,8 +7,8 @@ export default {
 		],  	
 	theme: {
 		fontFamily: {
-			'sans': ['DM Sans','ui-sans-serif', 'system-ui', ],
-			'serif': ['ui-serif', 'Georgia', ],
+			'sans': ['Rethink Sans','ui-sans-serif', 'system-ui', ],
+			'serif': ['ui-serif', 'Times New Roman', ],
 			'mono': ['ui-monospace', 'SFMono-Regular', ],
 		},
 		fontSize: {

@@ -1,0 +1,56 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const { title, meta, color, class: className, ...props } = Astro.props;
+import Botpoison from "@botpoison/browser";
+---
+
+<form x-data="contactForm()" @submit.prevent="submitForm">
+  <input x-model="formData.name" type="text" name="name" required />
+  <input x-model="formData.email" type="email" name="email" required />
+  <textarea x-model="formData.message" name="message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+<script is:inline>
+  function contactForm() {
+    return {
+      formData: {
+        name: "",
+        email: "",
+        message: "",
+      },
+      submitForm() {
+        const botpoison = new Botpoison({
+          publicKey: "pk_ed2df257-1669-441a-a64e-df1438b79b26",
+        });
+
+        botpoison.challenge().then((result) => {
+          // Add the Botpoison token to your form data
+          const data = new FormData();
+          Object.keys(this.formData).forEach((key) => {
+            data.append(key, this.formData[key]);
+          });
+          data.append("_botpoison", result.solution);
+
+          // Send the form data to Formspark
+          fetch("https://submit-form.com/MZNuUd1jS", {
+            method: "POST",
+            body: data,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              // Handle successful submission
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              // Handle errors
+            });
+        });
+      },
+    };
+  }
+</script>
