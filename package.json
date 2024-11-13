@@ -8,7 +8,8 @@
     "build": "astro build && cp -a ./dist/. ../MTK-Munich-dist",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.js",
+    "deploy:ssh": "node deploy-ssh.js"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
