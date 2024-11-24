@@ -3,162 +3,193 @@
 @tailwind utilities;
 
 @layer base {
-    
-    @font-face {
-        font-family: "DM Sans";
-        src: url('/fonts/DMSans-VariableFont_opsz,wght.ttf') format("truetype");
-    }
+  @font-face {
+    font-family: "DM Sans";
+    src: url("/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  }
 
-    @font-face {
-        font-family: "DM Sans";
-        font-style: italic;
-        src: url('/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format("truetype");
-    }
-    @font-face {
-        font-family: "Rethink Sans";
-        src: url('/fonts/RethinkSans-VariableFont_wght.ttf') format("truetype");
-    }
+  @font-face {
+    font-family: "DM Sans";
+    font-style: italic;
+    src: url("/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf")
+      format("truetype");
+  }
+  @font-face {
+    font-family: "Rethink Sans";
+    src: url("/fonts/RethinkSans-VariableFont_wght.ttf") format("truetype");
+  }
 
-    @font-face {
-        font-family: "Rethink Sans";
-        font-style: italic;
-        src: url('/fonts/RethinkSans-Italic-VariableFont_wght.ttf') format("truetype");
+  @font-face {
+    font-family: "Rethink Sans";
+    font-style: italic;
+    src: url("/fonts/RethinkSans-Italic-VariableFont_wght.ttf")
+      format("truetype");
+  }
+  :root {
+    --terracotta: 253, 78, 78;
+    --lazuli: 78, 78, 198;
+    --raspberry: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--terracotta)),
+      rgb(var(--raspberry)) 30%,
+      rgb(var(--lazuli)) 60%
+    );
+    --screenWidth: 100vw;
+    --screenSizeSelector: 0;
+    @screen sm {
+      --screenSizeSelector: 1;
     }
-    :root {
-        --terracotta: 253, 78, 78;
-        --lazuli: 78, 78, 198;
-        --raspberry: 49, 10, 101;
-        --accent-gradient: linear-gradient(45deg,
-                rgb(var(--terracotta)),
-                rgb(var(--raspberry)) 30%,
-                rgb(var(--lazuli)) 60%);
-        --screenWidth: 100vw;
-        --screenSizeSelector: 0;
-        @screen sm {
-            --screenSizeSelector: 1;
-        }
-        @screen md {
-            --screenSizeSelector: 2;
-        }
-        @screen lg {
-            --screenSizeSelector: 3;
-        }
-        @screen xl {
-            --screenSizeSelector: 4;
-        }
-        @screen 2xl {
-            --screenSizeSelector: 5;
-        }
+    @screen md {
+      --screenSizeSelector: 2;
     }
-    body {
-        ::backdrop {
-            backdrop-filter: blur(3px);
-        }
-        text-align: left;
+    @screen lg {
+      --screenSizeSelector: 3;
     }
-    .container-slim {
-        @apply mx-4 sm:mx-auto sm:w-[80%] lg:w-1/2;
+    @screen xl {
+      --screenSizeSelector: 4;
     }
-    h1, h2, h3, h4 {
-        @apply mb-4 text-stone-700;
+    @screen 2xl {
+      --screenSizeSelector: 5;
     }
-    h1 {@apply text-4xl md:text-3xl;}
-    h2 {@apply text-4xl md:text-3xl;}
-    h3 {@apply text-3xl md:text-2xl;}
-    h4 {@apply text-2xl md:text-xl;}
-    h5 {
-        @apply font-[900] text-xl md:text-lg uppercase text-sm tracking-wide ;
+  }
+  body {
+    ::backdrop {
+      backdrop-filter: blur(3px);
     }
-    h6 { @apply font-[900]}
-    a { @apply text-lazuli}
-    .markdown {
-        p {
-            @apply max-w-[60ch] leading-6 mb-4;
-        }
-        blockquote {
-            p {
-                @apply text-xl lg:text-2xl  py-4 sm:py-8 sm:px-8;
-            }
-        }
-        ul  {
-        @apply my-4;
-            li {
-                @apply list-disc pl-2 ml-6;
-            }
-        }
+    text-align: left;
+  }
+  .container-slim {
+    @apply mx-4 sm:mx-auto sm:w-[80%] lg:w-1/2;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply mb-4 text-stone-700;
+  }
+  h1 {
+    @apply text-4xl md:text-3xl;
+  }
+  h2 {
+    @apply text-4xl md:text-3xl;
+  }
+  h3 {
+    @apply text-3xl md:text-2xl;
+  }
+  h4 {
+    @apply text-2xl md:text-xl;
+  }
+  h5 {
+    @apply font-[900] text-xl md:text-lg uppercase text-sm tracking-wide;
+  }
+  h6 {
+    @apply font-[900];
+  }
+  a {
+    @apply text-lazuli;
+  }
+  .markdown {
+    p {
+      @apply max-w-[60ch] leading-6 mb-4;
     }
+    blockquote {
+      p {
+        @apply text-xl lg:text-2xl  py-4 sm:py-8 sm:px-8;
+      }
+    }
+    ul {
+      @apply my-4;
+      li {
+        @apply list-disc pl-2 ml-6;
+      }
+    }
+  }
 }
 @layer components {
-    .cards {
-        @apply flex flex-col 2xl:flex-row justify-between gap-12;
+  .cards {
+    @apply grid grid-cols-1 xl:grid-cols-3 gap-4;
+  }
+  .card {
+    @apply flex flex-col border border-terracotta rounded-lg p-4;
+    
+    > *:not(:last-child) {
+      @apply flex-shrink-0;
     }
-    .card {
-        @apply flex-1;
-        h3 {
-            @apply text-2xl;
-        }
-        ul {
-            @apply list-disc -mt-4 p-0;
-        }
-        p, li {
-            @apply text-lg leading-snug;
-        }
-        button {
-            @apply mt-4 text-base;
-        }
-        @apply flex flex-col;
-    }
-    .slide {
-        padding:0 1rem;            
-        @apply relative grid;
-        place-items: center;
-
-        .inner {
-            h1, h2, h3, h4, p, ul, ol {
-                @apply mb-4;
-            }
-            text-align: left;
-            @apply mx-auto w-[80%] sm:w-1/2;
-        }      
-    }
-    .inline-link {
-        @apply bg-lazuli text-white rounded-sm px-2;
-    }
-    .curved-headline {
-        @apply absolute left-1/2 translate-x-[-50%] opacity-90;
-        /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */
-        width: 100vw;
-        h1 {
-            font-size: calc(6rem - 2.5vw);         
-        }
-        h2 {
-            font-size: calc(6rem - 2.5vw);         
-        }
-        h3 {
-            font-size: calc(5rem - 2.5vw);         
-        }
-        h4 {
-            font-size: calc(6rem - 3vw);         
-        }
-    }
-        /* Tooltip container */
-        .tooltip {
-            @apply relative inline-block ;
-        }
-        .inverted-header > h4 ,  .inverted-header > h4 + p {
-            @apply text-stone-100;
-        }
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        @apply text-center text-terracotta bg-white p-2 absolute z-10 border-2 border-terracotta rounded-full bottom-2 right-2; 
+    
+    > *:last-child {
+      @apply mt-auto;
     }
 
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
+    h3 {
+      @apply text-2xl;
     }
-    .cards-grid {
-        @apply w-[80%] sm:w-full mx-auto overflow-visible grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4;
+    ul {
+      @apply list-disc -mt-4 p-0;
     }
+    p,
+    li {
+      @apply text-lg leading-snug;
+    }
+    button {
+      @apply mt-4 text-base py-2 px-4 self-end;
+    }
+    @apply flex flex-col;
+  }
+  .slide {
+    padding: 0 1rem;
+    @apply relative grid;
+    place-items: center;
+
+    .inner {
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul,
+      ol {
+        @apply mb-4;
+      }
+      text-align: left;
+      @apply mx-auto w-[80%] sm:w-1/2;
+    }
+  }
+  .inline-link {
+    @apply bg-lazuli text-white rounded-sm px-2;
+  }
+  .btn {
+    @apply bg-lazuli text-white rounded-sm px-8 py-4;
+  }
+  .curved-headline {
+    @apply absolute left-1/2 translate-x-[-50%]; 
+    /* @apply w-[500px] sm:w-[800px] md:w-[1200px] lg:w-[2000px]; */
+    width: 100vw;
+    h1, h2 {
+      font-size: calc(120px * (10 / (10 + var(--vw))));
+    }
+    h3, h4, h5, h6 {
+      font-size: calc(80px * (10 / (10 + var(--vw))));    }
+  }
+  /* Tooltip container */
+  .tooltip {
+    @apply relative inline-block;
+  }
+  .inverted-header > h4,
+  .inverted-header > h4 + p {
+    @apply text-stone-100;
+  }
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    @apply text-center text-terracotta bg-white p-2 absolute z-10 border-2 border-terracotta rounded-full bottom-2 right-2;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .cards-grid {
+    @apply w-[80%] sm:w-full mx-auto overflow-visible grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4;
+  }
 }

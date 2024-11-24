@@ -10,29 +10,29 @@ import Popover from '../../components/Popover.astro';
 import { Image } from 'astro:assets';
 import mapImage from '../../img/MTKMUC_Map_light.png';
 
-<CurvedHeadline tag="h2" direction="R2L" type="smile" offset="-20" class="top-[160px] sm:top-[-50px] md:top-[100px] lg:top-[200px] fill-terracotta">Lerne Tai Chi Chuan mit uns!</CurvedHeadline>
+<CurvedHeadline tag="h2" direction="R2L" type="smile" offset="0" class="fill-terracotta">Lerne Tai Chi Chuan mit uns!</CurvedHeadline>
 
 > Ma Tsu Kuen München widmet sich der Erforschung des ursprünglichen Tai Chi Chuan <br/>
 > und seiner wundersamen Wirkungen auf Körper und Geist 
 
-
-<CurvedHeadline tag="h2" type="slope" direction="R2L" offset="8" class="top-[30px] sm:top-[100px] md:top-[200px]  fill-terracotta">Warum Tai Chi Chuan?</CurvedHeadline>
-<CurvedHeadline tag="h3" type="quarter" direction="R2L" offset="20" class="top-[-20px] sm:top-[-150px] md:top-[200px] 2xl:top-[50px] fill-lazuli">What is it good for? — Absolutely everything!</CurvedHeadline>
+<CurvedHeadline tag="h2" type="slope" direction="R2L" offset="0" class=" fill-terracotta">Warum Tai Chi Chuan?</CurvedHeadline>
+<CurvedHeadline tag="h3" type="quarter" direction="R2L" offset="-20" class="fill-lazuli">What is it good for? — Absolutely everything!</CurvedHeadline>
 
 <div class="cards">
 <div class="card">
+
 ### für sich selbst
 Entspannung und Harmonie führen zu müheloser Bewegung ohne Überfluss. <br/>
 Verbinde Körper und Geist und entdecke Deine innere Gemütlichkeit.
 
-<Button  href="./taichi#health-aspect" >lese mehr über den Gesundheitsaspekt</Button>
+<Button  href="./taichi#health-aspect" >Der Gesundheitsaspekt</Button>
 </div>
 <div class="card">
 ### selbst & andere
-Die unvoreingenommene Begegnung ermöglicht Kontakt jenseits von Widerstand oder Flucht.<br/>
+Der unvoreingenommene Kontakt ermöglicht Begegnung jenseits von Widerstand oder Flucht.<br/>
 Entdecke Kampfkunst in kooperativen Austausch.
 
-<Button  href="./taichi#martial-aspect">lese mehr über den Kampfkunst Aspekt</Button>
+<Button  href="./taichi#martial-aspect">Der Kampfkunst Aspekt</Button>
 </div>
 <div class="card">
 ### Yin & Yang
@@ -41,35 +41,31 @@ Erforsche das Wechselspiel von Yin und Yang
 - im Austausch mit anderen,
 - und als Teil des Ganzen.
 
-<Button  href="./taichi#holistic-aspect">lese mehr über den ganzheitlichen Aspekt</Button>
+<Button  href="./taichi#holistic-aspect">Der ganzheitliche Aspekt</Button>
 </div>
 </div>
 
-<CurvedHeadline tag="h3" type="kicker" direction="R2L" offset="0" class="top-[-90px] sm:top-[-200px] xl:top-[-300px] 2xl:top-[-400px] fill-lazuli">Das Ma Tsun Kuen System</CurvedHeadline>
+<CurvedHeadline tag="h3" type="kicker" direction="R2L" offset="0" class="fill-lazuli">Das Ma Tsun Kuen System</CurvedHeadline>
 
-Wir üben **Ma Tsun Kuen Tai Chi Chuan**. Das ist ein komplettes System, welches alle Aspekte des Tai Chi Lernens enthält: Grundlagen Übungen, Formen, Partner Übungen, Anwendungen and I Qi Kung.
-Und für Informationen über meine Lehrer und über Meister Ma Tsun Kuen geht es <Button href="./about"> hier lang.</Button>
+### Ma Tsun Kuen Stil
+Wir üben <Button href="./matsunkeun" class="bg-terracotta">Ma Tsun Kuen Tai Chi Chuan</Button>. Das ist ein komplettes System, welches alle Aspekte des Tai Chi Lernens enthält:
+- Grundlagen Übungen,
+- Formen,
+- Partner Übungen und
+- I Qi Kung.
 
-<CurvedHeadline tag="h2" type="frown" direction="L2R" offset="-10" class="fill-terracotta md:top-[150px] 2xl:top-[0px]">Wo und Wann?</CurvedHeadline>
+Für Informationen über meine Lehrer und über Meister Ma Tsun Kuen geht es <Button href="./about"> hier lang.</Button>
 
-<a href="https://maps.app.goo.gl/B487KdWNx74MfPqt9" target="blank" class="tooltip">
-<span class="tooltiptext">Googlemap wird in neuem tab geöffnet</span>
-<Image src={mapImage} width="600" alt="a map that shows the location of the meeting" />
-</a>
-
-📍 Wir treffen uns im English Garden, auf der "Plantanenwiese", nahe der Busstation  "Chinesischer Turm".<br/>
-📅 <u>Montag abends</u> von 18:00 Uhr bis 19:30 Uhr
-
+<CurvedHeadline tag="h2" type="frown" direction="L2R" offset="-10" class="fill-terracotta ">Wo und Wann?</CurvedHeadline>
 <Button class="py-4 px-8 rounded-full" href="#contact">Schick mir gerne eine mail, wenn du Lust hast beim Training mitzumachen</Button> 
-<br />
 
 Die Klasse wird vorerst auf Spendenbasis angeboten
 
-
-
 > _Invest in loss_ — Cheng Man Chin
 
-<CurvedHeadline tag="h2" type="wave" direction="R2L" offset="-20" class="top-[-50px] sm:top-[-150px] md:top-[0px] lg:top-[-50px] xl:top-[-150px] 2xl:top-[-250px] fill-terracotta">For whom ? For everybody !</CurvedHeadline>
+
+
+<CurvedHeadline tag="h2" type="wave" direction="R2L" offset="-20" class=" fill-terracotta">For whom ? For everybody !</CurvedHeadline>
 
 **Bist du Anfänger? Willkommen!**<br/>
 Starte deine Tai Chi Reise mit uns! Ma Tsun Kuen TCC beinhaltet ein komplettes Trainings System, und die Inhalte bauen langsam auf einander auf. Man kann jederzeit einsteigen, die Grundlagen werden laufend wiederholt.

@@ -35,6 +35,17 @@ const { frontmatter = { title: "", description: "", contact: true } } =
     <title>{frontmatter.title}</title>
   </head>
   <body>
+    <div
+      class="z-[1000] fixed top-0 right-[200px] m-2 px-2 py-1 bg-black text-white rounded z-50 pointer-events-none"
+    >
+      <span class="sm:hidden">xs</span>
+      <span class="hidden sm:block md:hidden">sm</span>
+      <span class="hidden md:block lg:hidden">md</span>
+      <span class="hidden lg:block xl:hidden">lg</span>
+      <span class="hidden xl:block 2xl:hidden">xl</span>
+      <span class="hidden 2xl:block">2xl</span>
+    </div>
+
     <div class="relative overflow-x-hidden min-h-[200vh]">
       <Logos />
       <Nav />
@@ -47,24 +58,44 @@ const { frontmatter = { title: "", description: "", contact: true } } =
     <script>
       const curvedHeadlines = document.querySelectorAll(".curved-headline");
       const windowWidth = window.innerWidth;
-      let offsetSelector = // get value from css variable at root
-        parseInt(
-          getComputedStyle(document.documentElement).getPropertyValue(
-            "--screenSizeSelector"
-          )
-        ) || 0;
-      console.log(offsetSelector);
+
+      // Get base offset multipliers for different screen sizes
+      const offsetMultipliers = {
+        xs: 1.5, // < 640px
+        sm: 1.25, // 640px - 768px
+        md: 1, // 768px - 1024px
+        lg: 0.75, // 1024px - 1280px
+        xl: 0.5, // 1280px - 1536px
+        "2xl": 0.4, // > 1536px
+      };
+
+      function getOffsetMultiplier() {
+        const width = window.innerWidth;
+        if (width < 640) return offsetMultipliers.xs;
+        if (width < 768) return offsetMultipliers.sm;
+        if (width < 1024) return offsetMultipliers.md;
+        if (width < 1280) return offsetMultipliers.lg;
+        if (width < 1536) return offsetMultipliers.xl;
+        return offsetMultipliers["2xl"];
+      }
+
       function updateCurvedHeadlines() {
+        const multiplier = getOffsetMultiplier();
+
         curvedHeadlines.forEach((ele) => {
           const textPath = ele.querySelector("textPath");
           const direction = ele.getAttribute("direction");
+          const baseOffset = parseInt(ele.getAttribute("offset")) || 0;
 
-          const offset = parseInt(ele.getAttribute("offset"));
+          // Apply screen-size-based multiplier to the offset
+          const adjustedOffset = baseOffset * multiplier;
+
           const eleTop = ele.getBoundingClientRect().top;
           const eleOffsetPercent =
             direction == "L2R"
-              ? -(eleTop / 10 + offset) % 100
-              : (eleTop / 10 + offset) % 100;
+              ? -(eleTop / 10 + adjustedOffset) % 100
+              : (eleTop / 10 + adjustedOffset) % 100;
+
           textPath.setAttribute("startOffset", `${eleOffsetPercent}%`);
         });
       }
@@ -74,8 +105,22 @@ const { frontmatter = { title: "", description: "", contact: true } } =
         requestAnimationFrame(update);
       }
 
+      // Update on scroll and resize
       window.addEventListener("scroll", update);
+      window.addEventListener("resize", updateCurvedHeadlines);
       update();
+    </script>
+    <script>
+      // Update CSS variable on load and resize
+      function updateVwVariable() {
+        document.documentElement.style.setProperty(
+          "--vw",
+          window.innerWidth / 100
+        );
+      }
+
+      window.addEventListener("resize", updateVwVariable);
+      updateVwVariable(); // Initial set
     </script>
   </body>
 </html>

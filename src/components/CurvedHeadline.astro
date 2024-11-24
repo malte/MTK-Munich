@@ -25,45 +25,60 @@ const curves = {
   wave: "M 100,300 a 401,401 0 0,1 400,0  a 401,401 0 0,0 400,0",
 };
 const curve = curves[type];
-const spacing = tag == "h2" || "h1" ? "h-[120px] md:h-[300px]" : "h-[120px]";
+
+const getSpacing = (curveType) => {
+  const curveSpecificHeight = {
+    slope: "h-[25vw] 2xl:h-[15vw] 2xl:top-[5vw] ",
+    frown: "h-[25vw] sm:h-[20vw] md:h-[18vw] lg:h-[15vw] ",
+    slide: "h-[25vw] 2xl:h-[15vw]s",
+    smile: "h-[25vw] 2xl:h-[15vw] 2xl:top-[10vw] ",
+    hill: "h-[25vw] sm:h-[20vw] md:h-[18vw] lg:h-[15vw] ",
+    kicker: "h-[50vw] sm:h-[25vw] md:h-[20vw] lg:h-[15vw] top-[-30vw]",
+    quarter: "h-[10vw] sm:h-[9vw] md:h-[8vw] lg:h-[7vw] ",
+    wave: "h-[35vw] 2xl:h-[20vw] 2xl:top-[-10vw]",
+  };
+
+  return curveSpecificHeight[curveType];
+};
+
+const spacing = getSpacing(type);
 ---
 
-<div class:list={["relative", spacing]}>
-  <div
-    direction={direction}
-    offset={offset}
-    {...props}
-    id={uniqueId}
-    class:list={[
-      "curved-headline z-10 font-extrabold pointer-events-none",
-      className,
-    ]}
-  >
-    <Fragment set:html={`<${headlineTag}>`} />
-    <svg viewBox="0 0 1000 500">
-      <rect
-        width="1000"
-        height="500"
-        x="0"
-        y="0"
-        style="fill:transparent;stroke:black;stroke-width:0;"></rect>
-      <path
-        id={curveId}
-        fill="transparent"
-        stroke="#0000c8"
-        stroke-width="0.0"
-        d={curve}></path>
-      <text class="">
-        <textPath
-          lengthAdjust="spacing"
-          href=`#${curveId}`
-          class="animated-text"
-          startOffset="0"
-        >
-          <slot />
-        </textPath>
-      </text>
-    </svg>
-    <Fragment set:html={`</${headlineTag}>`} />
-  </div>
+<div
+  direction={direction}
+  offset={offset}
+  {...props}
+  id={uniqueId}
+  class:list={[
+    "relative curved-headline -z-10 font-bold pointer-events-none",
+    spacing,
+    className,
+  ]}
+>
+  <Fragment set:html={`<${headlineTag}>`} />
+  <svg viewBox="0 0 1000 500">
+    <rect
+      width="1000"
+      height="500"
+      x="0"
+      y="0"
+      style="fill:transparent;stroke:black;stroke-width:0;"></rect>
+    <path
+      id={curveId}
+      fill="transparent"
+      stroke="#0000c8"
+      stroke-width="0.0"
+      d={curve}></path>
+    <text class="">
+      <textPath
+        lengthAdjust="spacing"
+        href=`#${curveId}`
+        class="animated-text"
+        startOffset="0"
+      >
+        <slot />
+      </textPath>
+    </text>
+  </svg>
+  <Fragment set:html={`</${headlineTag}>`} />
 </div>

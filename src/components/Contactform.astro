@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const { title, meta, color, class: className, ...props } = Astro.props;
@@ -46,7 +45,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
     </label>
     <span>{t("contact.necessary")}</span>
 
-    <button type="submit" x-text="buttonText" :disabled="loading">
+    <button class="" type="submit" x-text="buttonText" :disabled="loading">
       {t("contact.send")}
     </button>
   </form>
@@ -59,7 +58,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
           name: "",
           email: "",
           message: "",
-          privacy: false
+          privacy: false,
         },
         buttonText: "Send",
         loading: false,
@@ -70,7 +69,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
           botpoison.challenge().then((result) => {
             this.buttonText = "Sending...";
             this.loading = true;
-            
+
             fetch(FORMSPARK_ACTION_URL, {
               method: "POST",
               headers: {
@@ -79,7 +78,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
               },
               body: JSON.stringify({
                 ...this.formData,
-                _botpoison: result.solution
+                _botpoison: result.solution,
               }),
             })
               .then(() => {
@@ -116,7 +115,7 @@ const { title, meta, color, class: className, ...props } = Astro.props;
       @apply flex flex-row gap-2 items-baseline;
     }
     button {
-      @apply bg-lazuli text-white py-2 px-4 rounded-lg hover:bg-terracotta;
+      @apply bg-lazuli text-white hover:bg-terracotta py-4 uppercase tracking-wider px-8 inline-block w-auto rounded-full;
     }
   </style>
 </div>
