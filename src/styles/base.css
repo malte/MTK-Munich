@@ -132,7 +132,7 @@
       @apply text-lg leading-snug;
     }
     button {
-      @apply mt-4 text-base py-2 px-4 self-end;
+      @apply mt-4 text-base py-2 px-4 self-center;
     }
     @apply flex flex-col;
   }
