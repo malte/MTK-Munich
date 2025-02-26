@@ -95,13 +95,16 @@
     }
     blockquote {
       p {
-        @apply text-xl lg:text-2xl  py-4 sm:py-8 sm:px-8;
+        @apply italic text-xl lg:text-2xl py-4 sm:py-8  px-8 sm:px-24 text-left text-terracotta;
+        & em {
+          @apply inline-block text-base not-italic text-center text-lazuli;
+        }
       }
     }
     ul {
       @apply my-4;
       li {
-        @apply list-disc pl-2 ml-6;
+        @apply list-disc pl-2 ml-6 max-w-[60ch];
       }
     }
   }
