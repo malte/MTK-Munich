@@ -6,33 +6,57 @@ import Nav from "../components/Nav.astro";
 interface Props {
   frontmatter: {
     title: string;
+    metaTitle: string;
     description: string;
     contact: boolean;
+    ogImage?: string;
   };
 }
 import Logos from "../components/Logos.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import Contactform from "../components/Contactform.astro";
 import type { arrayOutputType } from "astro/zod";
+
 const lang = getLangFromUrl(Astro.url);
-const { frontmatter = { title: "", description: "", contact: true } } =
-  Astro.props;
+const { frontmatter } = Astro.props;
+const defaultOgImage = "img/MTK_MUC_OG_image.png";
+const ogImageUrl = frontmatter?.ogImage || defaultOgImage;
+const fullOgImageUrl = `${Astro.site}${ogImageUrl}`;
 ---
 
 <!doctype html>
 <html lang={lang} class="bg-stone-100 text-stone-900">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={frontmatter.description} />
+    <meta name="title" content={frontmatter?.metaTitle || "Tai Chi Chuan Anfänger Kurs München"} />
+    <meta name="description" content={frontmatter?.description || "Tai Chi Chuan Kurs für Anfänger and Fortgeschrittene in München"} />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1"
     />
-
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Ma Tsun Kuen Tai Chi CHuan Munich" />
+    <meta property="og:title" content={frontmatter?.title || ""} />
+    <meta property="og:description" content={frontmatter?.description || ""} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang} />
+    <meta property="og:site_name" content="Ma Tsun Kuen Tai Chi CHuan Munich" />
+    <meta
+      property="og:image"
+      content={fullOgImageUrl}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={frontmatter?.title || ""} />
+    <meta name="twitter:description" content={frontmatter?.description || ""} />
+    <meta
+      name="twitter:image"
+      content={fullOgImageUrl}
+    />
+    <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={frontmatter.description} />
+    <meta name="generator" content={frontmatter?.description || ""} />
     <script src="https://unpkg.com/@botpoison/browser" async></script>
-    <title>{frontmatter.title}</title>
+    <title>{`${frontmatter?.title} | MTK TCC MUC` || "Ma Tsun Kuen Tai Chi CHuan Munich"}</title>
   </head>
   <body>
     <!-- <div
